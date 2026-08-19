@@ -17,11 +17,6 @@ export default function Home() {
                     <code>an aspiring UI/UX Designer and QA Engineer with a passion for clean design and smooth user experiences.</code>
                 </div>
             </div>
-
-            <div className='footer-two-column'>
-                <p className='font-cursive'>maria nadine faye rufo</p>
-                <code>thank u for scrolling bestie!</code>
-            </div>
         </div>
     )
 }

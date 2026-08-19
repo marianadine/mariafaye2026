@@ -15,7 +15,7 @@ export default function App() {
     <div className={`app-container ${isDarkMode ? 'dark' : ''}`}>
       <BrowserRouter>
         <Navbar isDarkMode={isDarkMode} setIsDarkMode={setIsDarkMode} />
-        
+
         <main className="page-content">
           <Routes>
             <Route path="/" element={<Home />} />
@@ -24,6 +24,11 @@ export default function App() {
             <Route path="/stack" element={<Stack />} />
             <Route path="/shop" element={<Shop />} />
           </Routes>
+
+          <footer className="footer-two-column">
+            <p className="font-cursive">maria nadine faye rufo</p>
+            <code>thank u for scrolling bestie!</code>
+          </footer>
         </main>
       </BrowserRouter>
     </div>
