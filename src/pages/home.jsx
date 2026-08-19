@@ -8,9 +8,12 @@ import umak from '../imgs/book-umak.png';
 import '../styles/commonstyles.css';
 import '../styles/home.css';
 
+import TechStack from '../components/techStack';
+
 export default function Home() {
     return (
         <div>
+            {/* FIRST SECTION */}
             <div className='first-section'>
                 <h3 className='introText'>hey, it’s nadz ☆</h3>
 
@@ -24,6 +27,7 @@ export default function Home() {
                 </div>
             </div>
 
+            {/* THIRD SECTION */}
             <div className='third-section'>
                 <h3 className='section-name'>side quests</h3>
                 <code className='section-description'>not just work, but wins — the timeline of companies i have worked with, organizations, and competitions</code>
@@ -35,6 +39,9 @@ export default function Home() {
                     <img src={umak} alt="UMAK Experience" className="book-card" />
                 </div>
             </div>
+            
+            {/* FOURTH SECTION */}
+            <TechStack />
         </div>
     )
 }
