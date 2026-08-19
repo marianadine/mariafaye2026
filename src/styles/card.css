@@ -1,17 +1,8 @@
-.braindump-section {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-    max-width: 1440px;
-    margin: 250px auto 100px auto;
-}
-
 .projects-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 40px;
-    margin: 32px;
+    margin: 10px auto 50px auto;
 }
 
 .project-card {
@@ -75,11 +66,11 @@
     border: 1px solid var(--box-stroke);
     border-radius: 20px;
     padding: 4px 12px;
-    background-color: #ffffff;
+    background-color: transparent;
 }
 
 .card-footer {
-    border-top: 1px solid #eaeaea;
+    border-top: 1px solid var(--box-stroke);
     padding-top: 16px;
     display: flex;
     align-items: center;
@@ -126,5 +117,5 @@
 
 .see-more-btn:hover {
     background-color: var(--text-color);
-    color: #ffffff;
+    color: var(--bg-color);
 }

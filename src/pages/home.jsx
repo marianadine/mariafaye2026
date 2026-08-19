@@ -92,7 +92,7 @@ export default function Home() {
             </section>
 
             {/* SECOND SECTION */}
-            <section className="braindump-section">
+            <section className="second-section">
                 <h3 className="section-name">brain dump</h3>
                 <code className="section-description">
                     products i have designed and developed — all of my ideas coming to life
