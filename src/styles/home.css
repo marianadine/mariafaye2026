@@ -1,0 +1,47 @@
+.first-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 746px;
+    margin: 100px auto;
+}
+
+.introText {
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: var(--brand-color);
+    font-family: 'Geist Sans', sans-serif;
+    margin-bottom: 32px;
+}
+
+.image-wrapper {
+    width: 100%;
+}
+
+.film-strip {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.two-column {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 100%;
+    margin-top: 32px;
+}
+
+.two-column p:first-child {
+    font-family: 'Geist Sans', sans-serif;
+    font-weight: 800;
+    color: var(--brand-color);
+}
+
+.two-column code:last-child {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--text-color);
+    text-align: right;
+    max-width: 469px;
+}
