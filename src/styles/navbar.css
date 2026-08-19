@@ -1,0 +1,84 @@
+.navbar {
+    width: 100%;
+    background-color: var(--bg-color);
+    font-family: 'Geist Mono', monospace, sans-serif;
+    transition: background-color 0.25s ease;
+}
+
+.navbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 24px;
+}
+
+/* Left Brand & Toggle */
+.navbar-left {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.brand-name {
+    font-weight: 800;
+    font-size: 1.1rem;
+    color: var(--brand-color);
+}
+
+.nav-link,
+.nav-link:visited,
+.nav-link:link {
+    text-decoration: none;
+    color: var(--text-color);
+    font-size: 0.95rem;
+    font-weight: 400;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    transition: color 0.25s ease;
+}
+
+.nav-link.active {
+    color: var(--text-color);
+    font-weight: 700;
+}
+
+.toggle-switch {
+    width: 42px;
+    height: 22px;
+    background-color: #d1d5db;
+    border-radius: 9999px;
+    border: none;
+    padding: 2px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    transition: background-color 0.2s ease;
+}
+
+.toggle-switch.active {
+    background-color: #4b5563;
+}
+
+.toggle-thumb {
+    width: 18px;
+    height: 18px;
+    background-color: #ffffff;
+    border-radius: 50%;
+    transition: transform 0.2s ease;
+}
+
+.toggle-switch.active .toggle-thumb {
+    transform: translateX(20px);
+}
+
+/* Right Links */
+.navbar-right {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+}
+
+.star-icon {
+    font-size: 0.85rem;
+}
