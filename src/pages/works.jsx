@@ -13,7 +13,7 @@ import '../styles/card.css';
 import '../styles/works.css';
 
 export default function Works() {
-  const [viewMode, setViewMode] = useState('grid');
+  const [viewMode, setViewMode] = useState('list');
 
   const featuredProjects = [
     {
