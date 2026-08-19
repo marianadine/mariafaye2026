@@ -1,0 +1,20 @@
+.font-cursive {
+    font-family: 'Cedarville Cursive', cursive;
+    color: var(--brand-color);
+    font-size: 1.5rem;
+}
+
+.footer-two-column {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 100%;
+    margin: 20px auto;
+}
+
+.footer-two-column code:last-child {
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: var(--text-color);
+    text-align: right;
+}

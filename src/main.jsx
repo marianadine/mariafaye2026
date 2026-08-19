@@ -14,6 +14,8 @@ import '@fontsource/geist-mono/500.css';
 import '@fontsource/geist-mono/600.css';
 import '@fontsource/geist-mono/700.css';
 
+import '@fontsource/cedarville-cursive';
+
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <App />
