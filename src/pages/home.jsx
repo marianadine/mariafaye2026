@@ -24,7 +24,7 @@ export default function Home() {
                 </div>
             </div>
 
-            <div className='second-section'>
+            <div className='third-section'>
                 <h3 className='section-name'>side quests</h3>
                 <code className='section-description'>not just work, but wins — the timeline of companies i have worked with, organizations, and competitions</code>
 
