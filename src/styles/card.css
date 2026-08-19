@@ -1,0 +1,130 @@
+.braindump-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 1440px;
+    margin: 250px auto 100px auto;
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    margin: 32px;
+}
+
+.project-card {
+    background-color: var(--box-bg);
+    border: 1px solid var(--box-stroke);
+    border-radius: 12px;
+    padding: 32px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    max-width: 684px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.card-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    margin-bottom: 20px;
+}
+
+.project-icon {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    padding: 12px;
+}
+
+.project-title {
+    font-family: 'Geist Mono', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-color);
+    margin-bottom: 4px;
+}
+
+.project-desc {
+    font-family: 'Geist Mono', monospace;
+    font-size: 1rem;
+    color: var(--text-color);
+    font-weight: 500;
+    line-height: 1.4;
+}
+
+.tag-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 24px;
+}
+
+.project-tag {
+    font-family: 'Geist Mono', monospace;
+    font-size: 0.875rem;
+    color: var(--grey-color);
+    border: 1px solid var(--box-stroke);
+    border-radius: 20px;
+    padding: 4px 12px;
+    background-color: #ffffff;
+}
+
+.card-footer {
+    border-top: 1px solid #eaeaea;
+    padding-top: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.footer-links {
+    display: flex;
+    gap: 12px;
+}
+
+.project-link {
+    font-family: 'Geist Mono', monospace;
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--text-color);
+    text-decoration: none;
+    transition: opacity 0.2s ease;
+}
+
+.project-link:hover {
+    opacity: 0.7;
+}
+
+.project-badge {
+    font-family: 'Geist Mono', monospace;
+    font-size: 0.875rem;
+    font-weight: 700;
+    color: var(--brand-color);
+}
+
+.see-more-btn {
+    font-family: 'Geist Mono', monospace;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--text-color);
+    border: 1px solid var(--text-color);
+    background: transparent;
+    border-radius: 20px;
+    padding: 8px 20px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.see-more-btn:hover {
+    background-color: var(--text-color);
+    color: #ffffff;
+}

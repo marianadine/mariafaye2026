@@ -1,5 +1,8 @@
 import stripImage from '../imgs/homepageimg.png';
 
+import solarSphereIcon from '../imgs/icons/solarspherelogo.png';
+import byahekoIcon from '../imgs/icons/byahekologo.png';
+
 import kmc from '../imgs/book-kmc.png';
 import sm from '../imgs/book-sm.png';
 import jpcs from '../imgs/book-jpcs.png';
@@ -12,10 +15,38 @@ import musicImg from '../imgs/cds.png';
 
 import '../styles/commonstyles.css';
 import '../styles/home.css';
+import '../styles/card.css';
 
 import TechStack from '../components/techStack';
 
 export default function Home() {
+
+    const projects = [
+        {
+            id: 1,
+            title: 'SolarSphere',
+            description: 'smart solar planning platform with solar visualization and personalized recommendations',
+            icon: solarSphereIcon,
+            tags: ['Solar Planning', 'Energy Saver', 'Cost Estimation'],
+            links: [
+                { label: 'Website ↗', url: '#' },
+                { label: 'Mobile Application ↗', url: '#' },
+                { label: 'Capstone ↗', url: '#' },
+            ],
+            badge: 'Capstone Project',
+        },
+        {
+            id: 2,
+            title: 'ByaheKo',
+            description: 'mobile app for discovering routes and making local commuting more convenient',
+            icon: byahekoIcon,
+            tags: ['Transportation', 'Route Discovery', 'Local Commuting'],
+            links: [
+                { label: 'Case Study ↗', url: '#' },
+            ],
+            badge: 'End to End Project',
+        },
+    ];
 
     const hobbiesList = [
         {
@@ -58,6 +89,49 @@ export default function Home() {
                     <p>maria nadine faye rufo</p>
                     <code>an aspiring UI/UX Designer and QA Engineer with a passion for clean design and smooth user experiences.</code>
                 </div>
+            </section>
+
+            {/* SECOND SECTION */}
+            <section className="braindump-section">
+                <h3 className="section-name">brain dump</h3>
+                <code className="section-description">
+                    products i have designed and developed — all of my ideas coming to life
+                </code>
+
+                <div className="projects-grid">
+                    {projects.map((project) => (
+                        <div key={project.id} className="project-card">
+                            <div className="card-header">
+                                <img src={project.icon} alt={project.title} className="project-icon" />
+                                <div className="project-meta">
+                                    <h4 className="project-title">{project.title}</h4>
+                                    <p className="project-desc">{project.description}</p>
+                                </div>
+                            </div>
+
+                            <div className="tag-list">
+                                {project.tags.map((tag, idx) => (
+                                    <span key={idx} className="project-tag">
+                                        {tag}
+                                    </span>
+                                ))}
+                            </div>
+
+                            <div className="card-footer">
+                                <div className="footer-links">
+                                    {project.links.map((link, idx) => (
+                                        <a key={idx} href={link.url} className="project-link">
+                                            {link.label}
+                                        </a>
+                                    ))}
+                                </div>
+                                <span className="project-badge">{project.badge}</span>
+                            </div>
+                        </div>
+                    ))}
+                </div>
+
+                <button className="see-more-btn">See More</button>
             </section>
 
             {/* THIRD SECTION */}
