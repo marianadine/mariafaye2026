@@ -9,7 +9,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 16px 24px;
+    padding: 40px 149px 0 149px;
 }
 
 /* Left Brand & Toggle */
@@ -23,6 +23,7 @@
     font-weight: 800;
     font-size: 1.1rem;
     color: var(--brand-color);
+    font-family: 'Geist Sans', sans-serif;
 }
 
 .nav-link,

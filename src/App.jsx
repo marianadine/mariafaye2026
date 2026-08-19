@@ -15,14 +15,16 @@ export default function App() {
     <div className={`app-container ${isDarkMode ? 'dark' : ''}`}>
       <BrowserRouter>
         <Navbar isDarkMode={isDarkMode} setIsDarkMode={setIsDarkMode} />
-
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/works" element={<Works />} />
-          <Route path="/exp" element={<Exp />} />
-          <Route path="/stack" element={<Stack />} />
-          <Route path="/shop" element={<Shop />} />
-        </Routes>
+        
+        <main className="page-content">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/works" element={<Works />} />
+            <Route path="/exp" element={<Exp />} />
+            <Route path="/stack" element={<Stack />} />
+            <Route path="/shop" element={<Shop />} />
+          </Routes>
+        </main>
       </BrowserRouter>
     </div>
   );
