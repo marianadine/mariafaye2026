@@ -1,31 +1,18 @@
 import React, { useState, forwardRef } from 'react';
+import HTMLFlipBook from 'react-pageflip';
+
 import stripImage from '../imgs/homepageimg.png';
-
-import solarSphereIcon from '../imgs/icons/solarspherelogo.png';
-import byahekoIcon from '../imgs/icons/byahekologo.png';
-
 import kmc from '../imgs/book-kmc.png';
 import sm from '../imgs/book-sm.png';
 import jpcs from '../imgs/book-jpcs.png';
 import umak from '../imgs/book-umak.png';
 
-import greysImg from '../imgs/cristina.png';
-import catsImg from '../imgs/cats.png';
-import booksImg from '../imgs/books.png';
-import musicImg from '../imgs/cds.png';
+import TechStack from '../components/techStack';
+import { projects, hobbiesList, bookPagesMap } from '../data/homeData';
 
 import '../styles/commonstyles.css';
 import '../styles/home.css';
 import '../styles/card.css';
-
-import TechStack from '../components/techStack';
-
-import HTMLFlipBook from 'react-pageflip';
-
-import page1 from '../imgs/pages/page1.png';
-import page2 from '../imgs/pages/page2.png';
-import page3 from '../imgs/pages/page3.png';
-import page4 from '../imgs/pages/page4.png';
 
 const Page = forwardRef((props, ref) => {
     const isEven = props.number % 2 === 0;
@@ -39,75 +26,10 @@ const Page = forwardRef((props, ref) => {
 Page.displayName = 'Page';
 
 export default function Home() {
-
-    const projects = [
-        {
-            id: 1,
-            title: 'SolarSphere',
-            description: 'smart solar planning platform with solar visualization and personalized recommendations',
-            icon: solarSphereIcon,
-            tags: ['Solar Planning', 'Energy Saver', 'Cost Estimation'],
-            links: [
-                { label: 'Website ↗', url: '#' },
-                { label: 'Mobile Application ↗', url: '#' },
-                { label: 'Capstone ↗', url: '#' },
-            ],
-            badge: 'Capstone Project',
-        },
-        {
-            id: 2,
-            title: 'ByaheKo',
-            description: 'mobile app for discovering routes and making local commuting more convenient',
-            icon: byahekoIcon,
-            tags: ['Transportation', 'Route Discovery', 'Local Commuting'],
-            links: [
-                { label: 'Case Study ↗', url: '#' },
-            ],
-            badge: 'End to End Project',
-        },
-    ];
-
-    const hobbiesList = [
-        {
-            id: 1,
-            image: greysImg,
-            alt: 'Grey\'s Anatomy',
-            label: 'rewatching greys anatomy',
-        },
-        {
-            id: 2,
-            image: catsImg,
-            alt: 'Playing with cats',
-            label: 'playing with cats',
-        },
-        {
-            id: 3,
-            image: booksImg,
-            alt: 'Reading books',
-            label: 'reading books',
-        },
-        {
-            id: 4,
-            image: musicImg,
-            alt: 'Listening to Abel and Olivia',
-            label: 'listening to abel and olivia',
-        },
-    ];
-
-
     const [activeBookPages, setActiveBookPages] = useState(null);
 
-    // Map each card to its corresponding array of page images
-    const bookPagesMap = {
-        sm: [page1, page2, page3, page4, page2, page3, page4],
-        kmc: [page3, page4],
-        jpcs: [page1, page2],
-        umak: [page3, page4],
-    };
-
     const openFlipbook = (bookKey) => {
-        const pages = bookPagesMap[bookKey] || [];
-        // Ensure even number of pages for flipbook rendering
+        const pages = bookPagesMap[bookKey] ? [...bookPagesMap[bookKey]] : [];
         if (pages.length % 2 !== 0) {
             pages.push(pages[pages.length - 1]);
         }
@@ -121,16 +43,18 @@ export default function Home() {
     return (
         <div>
             {/* FIRST SECTION */}
-            <section className='first-section'>
-                <h3 className='introText'>hey, it’s nadz ☆</h3>
+            <section className="first-section">
+                <h3 className="introText">hey, it’s nadz ☆</h3>
 
                 <div className="image-wrapper">
                     <img src={stripImage} alt="Film strip photos of Nadz" className="film-strip" />
                 </div>
 
-                <div className='two-column'>
+                <div className="two-column">
                     <p>maria nadine faye rufo</p>
-                    <code>an aspiring UI/UX Designer and QA Engineer with a passion for clean design and smooth user experiences.</code>
+                    <code>
+                        an aspiring UI/UX Designer and QA Engineer with a passion for clean design and smooth user experiences.
+                    </code>
                 </div>
             </section>
 
@@ -185,30 +109,10 @@ export default function Home() {
                 </code>
 
                 <div className="image-wrapper">
-                    <img
-                        src={sm}
-                        alt="SM Experience"
-                        className="book-card"
-                        onClick={() => openFlipbook('sm')}
-                    />
-                    <img
-                        src={kmc}
-                        alt="KMC Experience"
-                        className="book-card"
-                        onClick={() => openFlipbook('kmc')}
-                    />
-                    <img
-                        src={jpcs}
-                        alt="JPCS Experience"
-                        className="book-card"
-                        onClick={() => openFlipbook('jpcs')}
-                    />
-                    <img
-                        src={umak}
-                        alt="UMAK Experience"
-                        className="book-card"
-                        onClick={() => openFlipbook('umak')}
-                    />
+                    <img src={sm} alt="SM Experience" className="book-card" onClick={() => openFlipbook('sm')} />
+                    <img src={kmc} alt="KMC Experience" className="book-card" onClick={() => openFlipbook('kmc')} />
+                    <img src={jpcs} alt="JPCS Experience" className="book-card" onClick={() => openFlipbook('jpcs')} />
+                    <img src={umak} alt="UMAK Experience" className="book-card" onClick={() => openFlipbook('umak')} />
                 </div>
 
                 {/* Flipbook Modal Overlay */}
@@ -227,8 +131,6 @@ export default function Home() {
                                 minHeight={400}
                                 maxHeight={700}
                                 flippingTime={800}
-
-                                /* Page Spread Configuration */
                                 showCover={true}
                                 usePortrait={false}
                                 startPage={0}
@@ -266,5 +168,5 @@ export default function Home() {
                 </div>
             </section>
         </div>
-    )
+    );
 }
