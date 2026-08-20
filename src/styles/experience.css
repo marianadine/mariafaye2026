@@ -1,24 +1,26 @@
+/* ==========================================================================
+   1. CONTAINER & LIST LAYOUT
+   ========================================================================== */
 .exp-container {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 1200px;
-    max-width: 100%;
-    margin: 10px auto 100px auto;
-}
-
-.experience-list,
-.section-divider {
     width: 100%;
+    max-width: 1200px;
+    margin: 10px auto 100px auto;
 }
 
 .experience-list {
     display: flex;
     flex-direction: column;
     gap: 2.5rem;
+    width: 100%;
     margin-bottom: 0.5rem;
 }
 
+/* ==========================================================================
+   2. EXPERIENCE CARD & HEADER
+   ========================================================================== */
 .experience-card {
     display: flex;
     flex-direction: column;
@@ -43,10 +45,10 @@
 }
 
 .company-name {
+    margin: 0;
     font-size: 1.25rem;
     font-weight: 700;
     color: var(--text-color);
-    margin: 0;
 }
 
 .experience-period {
@@ -55,7 +57,9 @@
     color: var(--lightgrey-color);
 }
 
-/* Roles & Typography */
+/* ==========================================================================
+   3. ROLES & BULLET DETAILS
+   ========================================================================== */
 .roles-container {
     display: flex;
     flex-direction: column;
@@ -70,19 +74,19 @@
 }
 
 .role-title {
+    margin: 0;
     font-size: 1rem;
     font-weight: 700;
     color: var(--brand-color);
-    margin: 0;
 }
 
 .role-bullets {
-    list-style-type: none;
-    padding-left: 0;
-    margin: 0;
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
+    margin: 0;
+    padding-left: 0;
+    list-style-type: none;
 }
 
 .role-bullets li {
@@ -99,11 +103,15 @@
     content: "•";
     position: absolute;
     left: 0;
-    color: #888;
+    color: var(--grey-color, #888888);
 }
 
+/* ==========================================================================
+   4. SECTION DIVIDER
+   ========================================================================== */
 .section-divider {
+    width: 100%;
+    margin: 3rem 0;
     border: none;
     border-top: 1px solid var(--box-stroke);
-    margin: 3rem 0;
 }

@@ -1,3 +1,6 @@
+/* ==========================================================================
+   1. LAYOUT & CONTAINERS
+   ========================================================================== */
 .works-container {
     width: 100%;
     max-width: 1440px;
@@ -12,7 +15,33 @@
     width: 100%;
 }
 
-/* Toggle Buttons */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    width: 100%;
+    margin: 10px 0;
+}
+
+/* ==========================================================================
+   2. SECTION LABELS
+   ========================================================================== */
+.group-label {
+    font-family: 'Geist Mono', monospace;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--grey-color);
+    letter-spacing: 0.05em;
+    display: block;
+    margin-bottom: 16px;
+}
+
+.group-label.margin-top {
+    margin-top: 40px;
+}
+
+/* ==========================================================================
+   3. VIEW TOGGLE BUTTONS
+   ========================================================================== */
 .view-toggle {
     display: flex;
     background-color: var(--box-bg);
@@ -41,28 +70,45 @@
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 }
 
-.group-label {
-    font-family: 'Geist Mono', monospace;
-    font-size: 0.75rem;
-    font-weight: 600;
-    color: var(--grey-color);
-    letter-spacing: 0.05em;
-    display: block;
-    margin-bottom: 16px;
+/* Toggle Custom CSS Icons */
+.icon-list-view,
+.icon-grid-view {
+    width: 14px;
+    height: 14px;
+    display: inline-block;
+    position: relative;
 }
 
-.group-label.margin-top {
-    margin-top: 40px;
+.icon-list-view {
+    background: linear-gradient(to bottom,
+            currentColor 0px, currentColor 2px,
+            transparent 2px, transparent 4px,
+            currentColor 4px, currentColor 6px,
+            transparent 6px, transparent 8px,
+            currentColor 8px, currentColor 10px,
+            transparent 10px);
+    margin-top: 2px;
 }
 
-.projects-grid {
+.icon-grid-view {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    width: 100%;
-    max-width: 1440px;
-    margin: 10px auto;
+    gap: 2px;
 }
 
+.icon-grid-view::before,
+.icon-grid-view::after {
+    content: '';
+    background-color: currentColor;
+    width: 6px;
+    height: 6px;
+    border-radius: 1px;
+    box-shadow: 0 7px 0 currentColor;
+}
+
+/* ==========================================================================
+   4. PROJECT CARD & VARIANTS
+   ========================================================================== */
 .project-card {
     background-color: var(--box-bg);
     border: 1px solid var(--box-stroke);
@@ -77,8 +123,14 @@
     padding-bottom: 1.25rem;
 }
 
+/* List View Variant */
+.project-card.list .project-icon {
+    margin-bottom: 12px;
+}
+
+/* Grid View Variant */
 .project-card.grid .card-media {
-    max-width: 100%;
+    width: 100%;
     height: 300px;
     border-radius: 8px;
     overflow: hidden;
@@ -89,51 +141,4 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
-}
-
-.project-card.list .project-icon {
-    margin-bottom: 12px;
-}
-
-/* Container sizing for both icons */
-.icon-list-view,
-.icon-grid-view {
-    width: 14px;
-    height: 14px;
-    display: inline-block;
-    position: relative;
-}
-
-/* List Icon: 3 horizontal bars */
-.icon-list-view {
-    background: linear-gradient(to bottom,
-            currentColor 0px, currentColor 2px,
-            transparent 2px, transparent 4px,
-            currentColor 4px, currentColor 6px,
-            transparent 6px, transparent 8px,
-            currentColor 8px, currentColor 10px,
-            transparent 10px);
-    margin-top: 2px;
-}
-
-/* Grid Icon: 4 square tiles */
-.icon-grid-view {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 2px;
-}
-
-.icon-grid-view::before,
-.icon-grid-view::after,
-.icon-grid-view {}
-
-.icon-grid-view::before,
-.icon-grid-view::after {
-    content: '';
-    background-color: currentColor;
-    width: 6px;
-    height: 6px;
-    border-radius: 1px;
-    box-shadow: 0 7px 0 currentColor;
-    /* Creates the bottom 2 squares */
 }

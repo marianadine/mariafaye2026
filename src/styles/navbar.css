@@ -1,3 +1,6 @@
+/* ==========================================================================
+   1. NAVBAR CONTAINER & LAYOUT
+   ========================================================================== */
 .navbar {
     width: 100%;
     background-color: var(--bg-color);
@@ -12,7 +15,9 @@
     padding: 40px 149px 0 149px;
 }
 
-/* Left Brand & Toggle */
+/* ==========================================================================
+   2. BRAND & LEFT SECTION
+   ========================================================================== */
 .navbar-left {
     display: flex;
     align-items: center;
@@ -20,40 +25,55 @@
 }
 
 .brand-name {
-    font-weight: 800;
-    font-size: 1.1rem;
-    color: var(--brand-color);
     font-family: 'Geist Sans', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 800;
+    color: var(--brand-color);
+}
+
+/* ==========================================================================
+   3. NAVIGATION LINKS & RIGHT SECTION
+   ========================================================================== */
+.navbar-right {
+    display: flex;
+    align-items: center;
+    gap: 28px;
 }
 
 .nav-link,
 .nav-link:visited,
 .nav-link:link {
-    text-decoration: none;
-    color: var(--text-color);
-    font-size: 0.95rem;
-    font-weight: 400;
     display: flex;
     align-items: center;
     gap: 6px;
+    font-size: 0.95rem;
+    font-weight: 400;
+    color: var(--text-color);
+    text-decoration: none;
     transition: color 0.25s ease;
 }
 
 .nav-link.active {
-    color: var(--text-color);
     font-weight: 700;
 }
 
+.star-icon {
+    font-size: 0.85rem;
+}
+
+/* ==========================================================================
+   4. THEME TOGGLE SWITCH
+   ========================================================================== */
 .toggle-switch {
-    width: 42px;
-    height: 22px;
-    background-color: #d1d5db;
-    border-radius: 9999px;
-    border: none;
-    padding: 2px;
-    cursor: pointer;
     display: flex;
     align-items: center;
+    width: 42px;
+    height: 22px;
+    padding: 2px;
+    background-color: #d1d5db;
+    border: none;
+    border-radius: 9999px;
+    cursor: pointer;
     transition: background-color 0.2s ease;
 }
 
@@ -71,15 +91,4 @@
 
 .toggle-switch.active .toggle-thumb {
     transform: translateX(20px);
-}
-
-/* Right Links */
-.navbar-right {
-    display: flex;
-    align-items: center;
-    gap: 28px;
-}
-
-.star-icon {
-    font-size: 0.85rem;
 }
