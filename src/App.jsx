@@ -7,6 +7,7 @@ import Works from './pages/works';
 import Exp from './pages/exp';
 import Stack from './pages/stack';
 import Shop from './pages/shop';
+import ScrollToTop from './components/scrollToTop';
 
 export default function App() {
   const [isDarkMode, setIsDarkMode] = useState(false);
@@ -14,6 +15,7 @@ export default function App() {
   return (
     <div className={`app-container ${isDarkMode ? 'dark' : ''}`}>
       <BrowserRouter>
+        <ScrollToTop />
         <Navbar isDarkMode={isDarkMode} setIsDarkMode={setIsDarkMode} />
 
         <main className="page-content">
