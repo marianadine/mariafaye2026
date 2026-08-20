@@ -46,6 +46,7 @@
     height: 80px;
     object-fit: contain;
     margin-bottom: 16px;
+    border-radius: 50%;
 }
 
 /* Issuer Label */
