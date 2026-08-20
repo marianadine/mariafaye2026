@@ -1,3 +1,4 @@
+import React, { useState, forwardRef } from 'react';
 import stripImage from '../imgs/homepageimg.png';
 
 import solarSphereIcon from '../imgs/icons/solarspherelogo.png';
@@ -18,6 +19,24 @@ import '../styles/home.css';
 import '../styles/card.css';
 
 import TechStack from '../components/techStack';
+
+import HTMLFlipBook from 'react-pageflip';
+
+import page1 from '../imgs/pages/page1.png';
+import page2 from '../imgs/pages/page2.png';
+import page3 from '../imgs/pages/page3.png';
+import page4 from '../imgs/pages/page4.png';
+
+const Page = forwardRef((props, ref) => {
+    const isEven = props.number % 2 === 0;
+    return (
+        <div className={`page ${isEven ? 'page-even' : 'page-odd'}`} ref={ref}>
+            <img src={props.src} alt="Page content" className="page-image" />
+        </div>
+    );
+});
+
+Page.displayName = 'Page';
 
 export default function Home() {
 
@@ -74,6 +93,30 @@ export default function Home() {
             label: 'listening to abel and olivia',
         },
     ];
+
+
+    const [activeBookPages, setActiveBookPages] = useState(null);
+
+    // Map each card to its corresponding array of page images
+    const bookPagesMap = {
+        sm: [page1, page2, page3, page4, page2, page3, page4],
+        kmc: [page3, page4],
+        jpcs: [page1, page2],
+        umak: [page3, page4],
+    };
+
+    const openFlipbook = (bookKey) => {
+        const pages = bookPagesMap[bookKey] || [];
+        // Ensure even number of pages for flipbook rendering
+        if (pages.length % 2 !== 0) {
+            pages.push(pages[pages.length - 1]);
+        }
+        setActiveBookPages(pages);
+    };
+
+    const closeFlipbook = () => {
+        setActiveBookPages(null);
+    };
 
     return (
         <div>
@@ -135,16 +178,73 @@ export default function Home() {
             </section>
 
             {/* THIRD SECTION */}
-            <section className='third-section'>
-                <h3 className='section-name'>side quests</h3>
-                <code className='section-description'>not just work, but wins — the timeline of companies i have worked with, organizations, and competitions</code>
+            <section className="third-section">
+                <h3 className="section-name">side quests</h3>
+                <code className="section-description">
+                    not just work, but wins — the timeline of companies i have worked with, organizations, and competitions
+                </code>
 
                 <div className="image-wrapper">
-                    <img src={sm} alt="SM Experience" className="book-card" />
-                    <img src={kmc} alt="KMC Experience" className="book-card" />
-                    <img src={jpcs} alt="JPCS Experience" className="book-card" />
-                    <img src={umak} alt="UMAK Experience" className="book-card" />
+                    <img
+                        src={sm}
+                        alt="SM Experience"
+                        className="book-card"
+                        onClick={() => openFlipbook('sm')}
+                    />
+                    <img
+                        src={kmc}
+                        alt="KMC Experience"
+                        className="book-card"
+                        onClick={() => openFlipbook('kmc')}
+                    />
+                    <img
+                        src={jpcs}
+                        alt="JPCS Experience"
+                        className="book-card"
+                        onClick={() => openFlipbook('jpcs')}
+                    />
+                    <img
+                        src={umak}
+                        alt="UMAK Experience"
+                        className="book-card"
+                        onClick={() => openFlipbook('umak')}
+                    />
                 </div>
+
+                {/* Flipbook Modal Overlay */}
+                {activeBookPages && (
+                    <div className="flipbook-overlay" onClick={closeFlipbook}>
+                        <div className="flipbook-modal" onClick={(e) => e.stopPropagation()}>
+                            <button className="close-btn" onClick={closeFlipbook}>
+                                ✕
+                            </button>
+                            <HTMLFlipBook
+                                width={550}
+                                height={750}
+                                size="fixed"
+                                minWidth={300}
+                                maxWidth={500}
+                                minHeight={400}
+                                maxHeight={700}
+                                flippingTime={800}
+
+                                /* Page Spread Configuration */
+                                showCover={true}
+                                usePortrait={false}
+                                startPage={0}
+                                drawShadow={true}
+                                maxShadowOpacity={0.8}
+                                showPageCorners={true}
+                                mobileScrollSupport={true}
+                                className="flipbook-instance"
+                            >
+                                {activeBookPages.map((pageSrc, index) => (
+                                    <Page key={index} number={index + 1} src={pageSrc} />
+                                ))}
+                            </HTMLFlipBook>
+                        </div>
+                    </div>
+                )}
             </section>
 
             {/* FOURTH SECTION */}
