@@ -34,6 +34,7 @@
     height: 100px;
     object-fit: cover;
     padding: 12px;
+    border-radius: 16px;
 }
 
 .project-title {
