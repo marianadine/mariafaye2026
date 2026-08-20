@@ -2,10 +2,18 @@ import { useState } from 'react';
 import solarSphereIcon from '../imgs/icons/solarspherelogo.png';
 import byahekoIcon from '../imgs/icons/byahekologo.png';
 
+// Thumbnails
 import solarSphereThumb from '../imgs/thumbnail/SOLARSPHERE.png';
 import byahekoThumb from '../imgs/thumbnail/BYAHEKO.png';
 import maisonThumb from '../imgs/thumbnail/MAISON SUCRE.png';
 import madeByFeiThumb from '../imgs/thumbnail/MADEBYFEI.png';
+import photoBoothThumb from '../imgs/thumbnail/CLICKD.png';
+import uniqloThumb from '../imgs/thumbnail/UNIQLO.png';
+import pawsitiveThumb from '../imgs/thumbnail/PAWSITIVE care.png';
+import atmThumb from '../imgs/thumbnail/ATM.png';
+import bulldogsExchangeThumb from '../imgs/thumbnail/NU MOA BE.png';
+import clickdThumb from '../imgs/thumbnail/CLICKD.png';
+import exploreSphereThumb from '../imgs/thumbnail/ESPHERE.png';
 
 import '../styles/commonstyles.css';
 import '../styles/home.css';
@@ -47,29 +55,93 @@ export default function Works() {
   const moreProjects = [
     {
       id: 3,
-      title: 'Maison Sugar',
-      description: 'e-commerce pastry platform with intuitive ordering and smooth UI',
+      title: 'Clickd',
+      description: 'Interactive photobooth application for capturing and customizing photos.',
       icon: solarSphereIcon,
-      thumbnail: maisonThumb,
-      tags: ['UI/UX', 'Frontend Development'],
-      links: [
-        { label: 'Website ↗', url: '#' },
-        { label: 'Mobile Application ↗', url: '#' },
-      ],
-      badge: 'Capstone Project',
+      thumbnail: photoBoothThumb,
+      tags: ['React', 'JavaScript', 'Camera', 'Photo Editing', 'UI/UX'],
+      links: [{ label: 'Website ↗', url: '#' }],
+      badge: 'Web Application',
     },
     {
       id: 4,
-      title: 'Made By Fei',
-      description: 'portfolio website designed to showcase digital creative works',
+      title: 'Maison Sucre',
+      description: 'Elegant bakery website showcasing products and brand identity.',
+      icon: solarSphereIcon,
+      thumbnail: maisonThumb,
+      tags: ['Web Design', 'UI/UX', 'HTML', 'CSS', 'JavaScript', 'Branding'],
+      links: [{ label: 'Website ↗', url: '#' }],
+      badge: 'Web Application',
+    },
+    {
+      id: 5,
+      title: 'Uniqlo Inventory',
+      description: 'Inventory management system for tracking and organizing product stock.',
+      icon: solarSphereIcon,
+      thumbnail: uniqloThumb,
+      tags: ['Java', 'CRUD', 'Database', 'Inventory', 'UI/UX'],
+      links: [{ label: 'Repository ↗', url: '#' }],
+      badge: 'Desktop Application',
+    },
+    {
+      id: 6,
+      title: 'Pawsitive Care',
+      description: 'Pet care platform for managing essential pet information and services.',
+      icon: solarSphereIcon,
+      thumbnail: pawsitiveThumb,
+      tags: ['React', 'Web App', 'Database', 'Pet Care', 'UI/UX'],
+      links: [{ label: 'Website ↗', url: '#' }],
+      badge: 'Web Application',
+    },
+    {
+      id: 7,
+      title: 'ATM',
+      description: 'ATM simulation demonstrating essential banking transactions and account management.',
+      icon: solarSphereIcon,
+      thumbnail: atmThumb,
+      tags: ['Java', 'OOP', 'Banking', 'CRUD', 'UI/UX'],
+      links: [{ label: 'Repository ↗', url: '#' }],
+      badge: 'Desktop Application',
+    },
+    {
+      id: 8,
+      title: 'NU MOA Bulldogs Exchange',
+      description: 'Community marketplace for buying, selling, and exchanging items among students.',
+      icon: solarSphereIcon,
+      thumbnail: bulldogsExchangeThumb,
+      tags: ['Marketplace', 'React', 'Database', 'Web App', 'UI/UX'],
+      links: [{ label: 'Website ↗', url: '#' }],
+      badge: 'Web Application',
+    },
+    {
+      id: 9,
+      title: 'Clickd',
+      description: 'Interactive digital platform focused on connecting users with content and services.',
+      icon: solarSphereIcon,
+      thumbnail: clickdThumb,
+      tags: ['React', 'JavaScript', 'Web App', 'UI/UX'],
+      links: [{ label: 'Website ↗', url: '#' }],
+      badge: 'Web Application',
+    },
+    {
+      id: 10,
+      title: 'ExploreSphere',
+      description: 'Travel discovery platform for exploring destinations and planning experiences.',
+      icon: solarSphereIcon,
+      thumbnail: exploreSphereThumb,
+      tags: ['Travel', 'React', 'Maps', 'Web App', 'UI/UX'],
+      links: [{ label: 'Website ↗', url: '#' }],
+      badge: 'Web Application',
+    },
+    {
+      id: 11,
+      title: 'MadeByFei',
+      description: 'Creative brand website showcasing handmade products and creative work.',
       icon: solarSphereIcon,
       thumbnail: madeByFeiThumb,
-      tags: ['UI/UX', 'Full Stack Development'],
-      links: [
-        { label: 'Website ↗', url: '#' },
-        { label: 'Mobile Application ↗', url: '#' },
-      ],
-      badge: 'Capstone Project',
+      tags: ['Web Design', 'UI/UX', 'Branding', 'E-commerce', 'JavaScript'],
+      links: [{ label: 'Website ↗', url: '#' }],
+      badge: 'Portfolio / Shop',
     },
   ];
 
