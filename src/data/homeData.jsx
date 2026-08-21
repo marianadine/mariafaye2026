@@ -44,9 +44,14 @@ import kmcPage7 from '../imgs/pages/kmc7.png';
 import kmcPage8 from '../imgs/pages/kmc8.png';
 
 // jpcs pages
-
-// umak pages
-
+import jpcsPage1 from '../imgs/pages/jpcs1.png';
+import jpcsPage2 from '../imgs/pages/jpcs2.png';
+import jpcsPage3 from '../imgs/pages/jpcs3.png';
+import jpcsPage4 from '../imgs/pages/jpcs4.png';
+import jpcsPage5 from '../imgs/pages/jpcs5.png';
+import jpcsPage6 from '../imgs/pages/jpcs6.png';
+import jpcsPage7 from '../imgs/pages/jpcs7.png';
+import jpcsPage8 from '../imgs/pages/jpcs8.png';
 
 export const projects = [
     {
@@ -105,6 +110,5 @@ export const hobbiesList = [
 export const bookPagesMap = {
     sm: [sm, smPage1, smPage2, smPage3, smPage4, smPage5, smPage6, smPage7, smPage8, smBack],
     kmc: [kmc, kmcPage1, kmcPage2, kmcPage3, kmcPage4, kmcPage5, kmcPage6, kmcPage7, kmcPage8, kmcBack],
-    jpcs: [jpcs, jpcsBack],
-    umak: [umak, umakBack],
+    jpcs: [jpcs, jpcsPage1, jpcsPage2, jpcsPage3, jpcsPage4, jpcsPage5, jpcsPage6, jpcsPage7, jpcsPage8, jpcsBack],
 };
