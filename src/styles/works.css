@@ -142,3 +142,150 @@
     height: 100%;
     object-fit: cover;
 }
+
+/* ==========================================================================
+   WANNA COLLAB BANNER
+   ========================================================================== */
+
+.collab-banner {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    padding: 32px;
+    margin-bottom: 48px;
+    background-color: var(--box-bg);
+    border: 1px solid var(--box-stroke);
+    border-radius: 16px;
+    width: 100%;
+}
+
+.collab-top-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    width: 100%;
+}
+
+.collab-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    max-width: 680px;
+}
+
+.collab-badge {
+    font-family: 'Geist Mono', monospace;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    color: var(--brand-color);
+    margin-bottom: 8px;
+}
+
+.collab-title {
+    font-family: 'Geist Sans', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--brand-color);
+    margin-bottom: 8px;
+}
+
+.collab-desc {
+    font-family: 'Geist Mono', monospace;
+    font-size: 0.95rem;
+    font-weight: 500;
+    line-height: 1.5;
+    color: var(--text-color);
+}
+
+.collab-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 20px;
+    font-family: 'Geist Mono', monospace;
+    font-size: 0.875rem;
+    font-weight: 600;
+    white-space: nowrap;
+    color: var(--bg-color);
+    background-color: var(--brand-color);
+    border: 1px solid var(--brand-color);
+    border-radius: 8px;
+    text-decoration: none;
+    transition: opacity 0.2s ease, transform 0.1s ease;
+}
+
+.collab-btn:hover {
+    opacity: 0.9;
+    transform: translateY(-1px);
+}
+
+.collab-contacts {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding-top: 20px;
+    border-top: 1px dashed var(--box-stroke);
+}
+
+.collab-contact-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-family: 'Geist Mono', monospace;
+    font-size: 0.85rem;
+    color: var(--text-color);
+    text-decoration: none;
+    transition: opacity 0.2s ease;
+}
+
+.collab-contact-item:hover {
+    opacity: 0.75;
+}
+
+.contact-label {
+    font-size: 0.7rem;
+    font-weight: 700;
+    padding: 2px 6px;
+    border-radius: 4px;
+    background-color: var(--box-stroke);
+    color: var(--brand-color);
+}
+
+.contact-value {
+    font-weight: 500;
+}
+
+.collab-socials {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.social-link {
+    font-family: 'Geist Mono', monospace;
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--brand-color);
+    text-decoration: none;
+    transition: opacity 0.2s ease;
+}
+
+.social-link:hover {
+    opacity: 0.7;
+}
+
+@media (max-width: 768px) {
+    .collab-top-row {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .collab-contacts {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+    }
+}

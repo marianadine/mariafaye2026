@@ -11,6 +11,52 @@ export default function Works() {
 
   return (
     <section className="works-container">
+
+      {/* Wanna Collab Section */}
+      <div className="collab-banner">
+        {/* Top Row: Info + Action Button */}
+        <div className="collab-top-row">
+          <div className="collab-content">
+            <span className="collab-badge">✩ OPEN FOR COLLABS</span>
+            <h2 className="collab-title">wanna collaborate?</h2>
+            <p className="collab-desc">
+              have a project in mind, an idea to bring to life, or just want to chat about ui/ux and development? let’s create something amazing together.
+            </p>
+          </div>
+
+          <a href="mailto:your.email@example.com" className="collab-btn">
+            get in touch
+          </a>
+        </div>
+
+        {/* Bottom Row: Full-width Contacts Bar */}
+        <div className="collab-contacts">
+          <a href="mailto:your.email@example.com" className="collab-contact-item">
+            <span className="contact-label">EMAIL</span>
+            <span className="contact-value">nadinerufo7@gmail.com</span>
+          </a>
+
+          <div className="collab-socials">
+            <a
+              href="https://www.facebook.com/mariaafeii"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="social-link"
+            >
+              Facebook ↗
+            </a>
+            <a
+              href="https://www.linkedin.com/in/marianadine0912/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="social-link"
+            >
+              LinkedIn ↗
+            </a>
+          </div>
+        </div>
+      </div>
+
       {/* Header */}
       <div className="works-header">
         <div>
