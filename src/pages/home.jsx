@@ -114,14 +114,18 @@ export default function Home() {
                     <img src={sm} alt="SM Experience" className="book-card" onClick={() => openFlipbook('sm')} />
                     <img src={kmc} alt="KMC Experience" className="book-card" onClick={() => openFlipbook('kmc')} />
                     <img src={jpcs} alt="JPCS Experience" className="book-card" onClick={() => openFlipbook('jpcs')} />
-                    <img src={umak} alt="UMAK Experience" className="book-card" onClick={() => openFlipbook('umak')} />
+                    <img src={umak} alt="UMAK Experience" className="book-card" />
                 </div>
 
                 {/* Flipbook Modal Overlay */}
                 {activeBookPages && (
                     <div className="flipbook-overlay" onClick={closeFlipbook}>
                         <div className="flipbook-modal" onClick={(e) => e.stopPropagation()}>
-                            <button className="close-btn" onClick={closeFlipbook}>
+                            <button
+                                className="close-btn"
+                                onClick={closeFlipbook}
+                                aria-label="Close"
+                            >
                                 ✕
                             </button>
                             <HTMLFlipBook
