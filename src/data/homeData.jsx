@@ -23,6 +23,30 @@ import smBack from '../imgs/pages/smback.png';
 import jpcsBack from '../imgs/pages/jpcsback.png';
 import umakBack from '../imgs/pages/umakback.png';
 
+// sm pages
+import smPage1 from '../imgs/pages/sm1.png';
+import smPage2 from '../imgs/pages/sm2.png';
+import smPage3 from '../imgs/pages/sm3.png';
+import smPage4 from '../imgs/pages/sm4.png';
+import smPage5 from '../imgs/pages/sm5.png';
+import smPage6 from '../imgs/pages/sm6.png';
+import smPage7 from '../imgs/pages/sm7.png';
+import smPage8 from '../imgs/pages/sm8.png';
+
+// kmc pages
+import kmcPage1 from '../imgs/pages/kmc1.png';
+import kmcPage2 from '../imgs/pages/kmc2.png';
+import kmcPage3 from '../imgs/pages/kmc3.png';
+import kmcPage4 from '../imgs/pages/kmc4.png';
+import kmcPage5 from '../imgs/pages/kmc5.png';
+import kmcPage6 from '../imgs/pages/kmc6.png';
+import kmcPage7 from '../imgs/pages/kmc7.png';
+import kmcPage8 from '../imgs/pages/kmc8.png';
+
+// jpcs pages
+
+// umak pages
+
 
 export const projects = [
     {
@@ -79,8 +103,8 @@ export const hobbiesList = [
 ];
 
 export const bookPagesMap = {
-    sm: [sm, smBack],
-    kmc: [kmc, kmcBack],
+    sm: [sm, smPage1, smPage2, smPage3, smPage4, smPage5, smPage6, smPage7, smPage8, smBack],
+    kmc: [kmc, kmcPage1, kmcPage2, kmcPage3, kmcPage4, kmcPage5, kmcPage6, kmcPage7, kmcPage8, kmcBack],
     jpcs: [jpcs, jpcsBack],
     umak: [umak, umakBack],
 };
