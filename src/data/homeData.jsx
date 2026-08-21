@@ -11,6 +11,19 @@ import page2 from '../imgs/pages/page2.png';
 import page3 from '../imgs/pages/page3.png';
 import page4 from '../imgs/pages/page4.png';
 
+// front pages
+import kmc from '../imgs/book-kmc.png';
+import sm from '../imgs/book-sm.png';
+import jpcs from '../imgs/book-jpcs.png';
+import umak from '../imgs/book-umak.png';
+
+// back pages
+import kmcBack from '../imgs/pages/kmcback.png';
+import smBack from '../imgs/pages/smback.png';
+import jpcsBack from '../imgs/pages/jpcsback.png';
+import umakBack from '../imgs/pages/umakback.png';
+
+
 export const projects = [
     {
         id: 1,
@@ -66,8 +79,8 @@ export const hobbiesList = [
 ];
 
 export const bookPagesMap = {
-    sm: [page1, page2, page3, page4, page2, page3, page4],
-    kmc: [page3, page4],
-    jpcs: [page1, page2],
-    umak: [page3, page4],
+    sm: [sm, smBack],
+    kmc: [kmc, kmcBack],
+    jpcs: [jpcs, jpcsBack],
+    umak: [umak, umakBack],
 };

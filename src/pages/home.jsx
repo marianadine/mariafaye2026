@@ -2,6 +2,8 @@ import React, { useState, forwardRef } from 'react';
 import HTMLFlipBook from 'react-pageflip';
 
 import stripImage from '../imgs/homepageimg.png';
+
+// front pages
 import kmc from '../imgs/book-kmc.png';
 import sm from '../imgs/book-sm.png';
 import jpcs from '../imgs/book-jpcs.png';
