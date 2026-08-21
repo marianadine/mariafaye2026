@@ -34,6 +34,7 @@ export const featuredProjects = [
         tags: ['Solar Planning', 'Energy Saver', 'Cost Estimation'],
         links: [
             { label: 'Website ↗', url: 'https://solarsphere-web.vercel.app/' },
+            { label: 'SITCON 2026 ↗', url: 'https://drive.google.com/file/d/1_P2t5V6EVNYI2SHpshSRr_yvn08KG0pl/view?usp=sharing' },
         ],
         badge: 'Capstone Project',
     },
