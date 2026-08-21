@@ -33,8 +33,7 @@ export const featuredProjects = [
         thumbnail: solarSphereThumb,
         tags: ['Solar Planning', 'Energy Saver', 'Cost Estimation'],
         links: [
-            { label: 'Website ↗', url: '#' },
-            { label: 'Mobile Application ↗', url: '#' },
+            { label: 'Website ↗', url: 'https://solarsphere-web.vercel.app/' },
         ],
         badge: 'Capstone Project',
     },
@@ -46,10 +45,9 @@ export const featuredProjects = [
         thumbnail: byahekoThumb,
         tags: ['Transportation', 'Route Discovery', 'Local Commuting'],
         links: [
-            { label: 'Website ↗', url: '#' },
             { label: 'Case Study ↗', url: '#' },
         ],
-        badge: 'Capstone Project',
+        badge: 'End to End Project',
     },
 ];
 
@@ -60,8 +58,8 @@ export const moreProjects = [
         description: 'Interactive photobooth application for capturing and customizing photos.',
         icon: clickdIcon,
         thumbnail: clickdThumb,
-        tags: ['React', 'JavaScript', 'Camera', 'Photo Editing', 'UI/UX'],
-        links: [{ label: 'Website ↗', url: '#' }],
+        tags: ['React', 'JavaScript', 'Photobooth', 'UI/UX'],
+        links: [{ label: 'Website ↗', url: 'https://clickbyfei.vercel.app/' }],
         badge: 'Web Application',
     },
     {
@@ -71,7 +69,7 @@ export const moreProjects = [
         icon: maisonIcon,
         thumbnail: maisonThumb,
         tags: ['Web Design', 'UI/UX', 'HTML', 'CSS', 'JavaScript', 'Branding'],
-        links: [{ label: 'Website ↗', url: '#' }],
+        links: [{ label: 'Website ↗', url: 'https://maisonsucre.vercel.app/' }],
         badge: 'Web Application',
     },
     {
@@ -81,7 +79,7 @@ export const moreProjects = [
         icon: uniqloIcon,
         thumbnail: uniqloThumb,
         tags: ['Java', 'CRUD', 'Database', 'Inventory', 'UI/UX'],
-        links: [{ label: 'Repository ↗', url: '#' }],
+        links: [{ label: 'Introduction ↗', url: 'https://drive.google.com/file/d/1vYvVto44O4vUJU1cc583WXhv-bm-GV5Q/view?usp=sharing' }],
         badge: 'Desktop Application',
     },
     {
@@ -90,9 +88,10 @@ export const moreProjects = [
         description: 'Pet care platform for managing essential pet information and services.',
         icon: pawsitiveIcon,
         thumbnail: pawsitiveThumb,
-        tags: ['React', 'Web App', 'Database', 'Pet Care', 'UI/UX'],
-        links: [{ label: 'Website ↗', url: '#' }],
-        badge: 'Web Application',
+        tags: ['React', 'Full Stack Development', 'Web App', 'Pet Care', 'UI/UX'],
+        links: [{ label: 'Repository ↗', url: 'https://github.com/marianadine/PawsitiveCare' },
+        { label: 'Demo ↗', url: 'https://drive.google.com/file/d/1eQahdmNRlvlg6dvJTy2LhEQZVlpUcWSe/view?usp=sharing' }],
+        badge: 'Mobile Application',
     },
     {
         id: 7,
@@ -101,7 +100,7 @@ export const moreProjects = [
         icon: atmIcon,
         thumbnail: atmThumb,
         tags: ['Java', 'OOP', 'Banking', 'CRUD', 'UI/UX'],
-        links: [{ label: 'Repository ↗', url: '#' }],
+        links: [{ label: 'Repository ↗', url: 'https://github.com/marianadine/MONEY-MAUVE' }],
         badge: 'Desktop Application',
     },
     {
@@ -111,7 +110,7 @@ export const moreProjects = [
         icon: bulldogsExchangeIcon,
         thumbnail: bulldogsExchangeThumb,
         tags: ['Marketplace', 'React', 'Database', 'Web App', 'UI/UX'],
-        links: [{ label: 'Website ↗', url: '#' }],
+        links: [{ label: 'Website ↗', url: 'https://bulldogs-exchange-nu.vercel.app/home' }],
         badge: 'Web Application',
     },
     {
@@ -121,7 +120,7 @@ export const moreProjects = [
         icon: jpcsIcon,
         thumbnail: jpcsThumb,
         tags: ['React', 'JavaScript', 'Web App', 'UI/UX'],
-        links: [{ label: 'Website ↗', url: '#' }],
+        links: [{ label: 'Website ↗', url: 'https://jpcsnumoa.github.io/community/' }],
         badge: 'Web Application',
     },
     {
@@ -130,8 +129,8 @@ export const moreProjects = [
         description: 'Travel discovery platform for exploring destinations and planning experiences.',
         icon: exploreSphereIcon,
         thumbnail: exploreSphereThumb,
-        tags: ['Travel', 'React', 'Maps', 'Web App', 'UI/UX'],
-        links: [{ label: 'Website ↗', url: '#' }],
+        tags: ['Travel', 'Python', 'Maps', 'Web App', 'UI/UX'],
+        links: [{ label: 'Repository ↗', url: 'https://github.com/marianadine/exploresphere' }],
         badge: 'Web Application',
     },
     {
@@ -140,8 +139,8 @@ export const moreProjects = [
         description: 'Creative brand website showcasing handmade products and creative work.',
         icon: madeByFeiIcon,
         thumbnail: madeByFeiThumb,
-        tags: ['Web Design', 'UI/UX', 'Branding', 'E-commerce', 'JavaScript'],
-        links: [{ label: 'Website ↗', url: '#' }],
-        badge: 'Portfolio / Shop',
+        tags: ['Web Design', 'UI/UX', 'Branding', 'JavaScript', 'HTML', 'CSS'],
+        links: [{ label: 'Website ↗', url: 'https://madebyfei.vercel.app/' }],
+        badge: 'Portfolio',
     },
 ];
