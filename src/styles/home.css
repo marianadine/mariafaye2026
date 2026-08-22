@@ -6,8 +6,10 @@
     flex-direction: column;
     align-items: center;
     width: 100%;
-    max-width: 746px;
-    margin: 120px auto;
+    max-width: 850px;
+    margin: 200px auto;
+    padding: 0 24px;
+    box-sizing: border-box;
 }
 
 .introText {
@@ -16,6 +18,11 @@
     font-weight: 700;
     color: var(--brand-color);
     margin-bottom: 32px;
+    text-align: center;
+}
+
+.image-wrapper {
+    width: 100%;
 }
 
 .film-strip {
@@ -30,12 +37,14 @@
     align-items: flex-start;
     width: 100%;
     margin-top: 32px;
+    gap: 20px;
 }
 
 .two-column p:first-child {
     font-family: 'Geist Sans', sans-serif;
     font-weight: 800;
     color: var(--brand-color);
+    white-space: nowrap;
 }
 
 .two-column code:last-child {
@@ -44,6 +53,7 @@
     color: var(--text-color);
     text-align: right;
     max-width: 469px;
+    line-height: 1.5;
 }
 
 /* ==========================================================================
@@ -54,8 +64,10 @@
     flex-direction: column;
     align-items: center;
     width: 100%;
-    max-width: 1440px;
-    margin: 250px auto 100px auto;
+    max-width: 1200px;
+    margin: 150px auto 100px auto;
+    padding: 0 24px;
+    box-sizing: border-box;
 }
 
 .see-more-btn {
@@ -87,26 +99,34 @@
     align-items: center;
     text-align: center;
     width: 100%;
+    max-width: 1200px;
     margin: 150px auto;
+    padding: 0 24px;
+    box-sizing: border-box;
 }
 
 .third-section code {
     color: var(--text-color);
     max-width: 530px;
     margin-bottom: 40px;
+    display: block;
+    line-height: 1.5;
 }
 
 .third-section .image-wrapper {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 65px;
+    gap: 40px;
     width: 100%;
+    justify-items: center;
 }
 
 .third-section .book-card {
     width: 100%;
+    max-width: 220px;
     height: auto;
     object-fit: contain;
+    cursor: pointer;
     transition: transform 0.25s ease;
 }
 
@@ -128,7 +148,41 @@
 }
 
 .third-section .book-card:hover {
-    transform: translateY(-6px);
+    transform: translateY(-6px) scale(1.02);
+}
+
+/* Flipbook Modal Overlay */
+.flipbook-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.75);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+    padding: 20px;
+}
+
+.flipbook-modal {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.close-btn {
+    position: absolute;
+    top: -40px;
+    right: 0;
+    background: transparent;
+    border: none;
+    color: #ffffff;
+    font-size: 1.5rem;
+    cursor: pointer;
+    z-index: 2001;
 }
 
 /* ==========================================================================
@@ -140,15 +194,19 @@
     align-items: center;
     text-align: center;
     width: 100%;
+    max-width: 1200px;
     margin: 150px auto 120px auto;
+    padding: 0 24px;
+    box-sizing: border-box;
 }
 
 .hobbies-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 70px;
+    gap: 40px;
     align-items: end;
     margin: 40px auto;
+    width: 100%;
 }
 
 .hobby-card {
@@ -179,10 +237,97 @@
 
 .hobby-label {
     font-family: 'Geist Mono', monospace;
-    font-size: 1rem;
+    font-size: 0.95rem;
     font-weight: 600;
     color: var(--text-color);
     line-height: 1.3;
     text-align: center;
     max-width: 250px;
+}
+
+/* ==========================================================================
+   5. MEDIA QUERIES (RESPONSIVE BREAKPOINTS)
+   ========================================================================== */
+
+/* Tablet (1024px and down) */
+@media (max-width: 1024px) {
+
+    .second-section,
+    .third-section,
+    .hobbies-section {
+        margin: 100px auto;
+    }
+
+    .third-section .image-wrapper {
+        gap: 24px;
+    }
+
+    .hobbies-grid {
+        gap: 24px;
+    }
+}
+
+@media (max-width: 768px) {
+    .first-section {
+        margin: 90px auto 60px auto;
+    }
+
+    .introText {
+        font-size: 1rem;
+        margin-bottom: 24px;
+    }
+
+    .two-column {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+
+    .two-column code:last-child,
+    .two-column code:first-child {
+        text-align: left;
+        max-width: 100%;
+        font-size: 0.8rem;
+    }
+
+    .third-section .image-wrapper {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 32px;
+    }
+
+    .hobbies-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 32px;
+    }
+
+    .hobby-image-wrapper {
+        height: 150px;
+    }
+}
+
+@media (max-width: 480px) {
+    .introText {
+        font-size: 1.5rem;
+    }
+
+    .third-section .image-wrapper,
+    .hobbies-grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+
+    .book-card:nth-child(1),
+    .book-card:nth-child(2),
+    .book-card:nth-child(3),
+    .book-card:nth-child(4) {
+        transform: none;
+    }
+
+    .third-section .book-card {
+        max-width: 150px;
+    }
+
+    .hobby-image-wrapper {
+        height: 120px;
+    }
 }
