@@ -3,7 +3,6 @@ import { featuredProjects, moreProjects } from '../data/workData';
 
 import '../styles/commonstyles.css';
 import '../styles/home.css';
-import '../styles/card.css';
 import '../styles/works.css';
 
 export default function Works() {

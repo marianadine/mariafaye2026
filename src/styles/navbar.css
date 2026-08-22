@@ -3,9 +3,16 @@
    ========================================================================== */
 .navbar {
     width: 100%;
+    height: 100px;
     background-color: var(--bg-color);
     font-family: 'Geist Mono', monospace, sans-serif;
     transition: background-color 0.25s ease;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
 }
 
 .navbar-container {
@@ -59,6 +66,22 @@
 
 .star-icon {
     font-size: 0.85rem;
+}
+
+.brand-link {
+    text-decoration: none;
+    color: inherit;
+    display: inline-flex;
+    align-items: center;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.brand-name {
+    font-family: 'Geist Sans', sans-serif;
+    font-weight: 700;
+    color: var(--brand-color);
+    user-select: none;
 }
 
 /* ==========================================================================
