@@ -4,28 +4,24 @@ import '../styles/commonstyles.css';
 export default function techStack() {
   const categories = [
     {
-      title: 'UI/UX',
-      skills: ['FIGMA', 'CANVA', 'AFFINITY', 'ADOBE PHOTOSHOP', 'BALSAMIQ'],
+      title: 'UI/UX DESIGN',
+      skills: ['FIGMA', 'CANVA', 'ADOBE PHOTOSHOP', 'BALSAMIQ', 'AFFINITY'],
     },
     {
-      title: 'FRONTEND DEVELOPMENT',
-      skills: ['HTML', 'CSS', 'REACTJS'],
+      title: 'FRONTEND & WEB',
+      skills: ['REACTJS', 'JAVASCRIPT', 'HTML5 / CSS3'],
     },
     {
       title: 'MOBILE DEVELOPMENT',
       skills: ['REACT NATIVE', 'FLUTTER'],
     },
     {
-      title: 'PROGRAMMING',
+      title: 'LANGUAGES',
       skills: ['JAVA', 'JAVASCRIPT'],
     },
     {
-      title: 'PRODUCTIVITY & PROJECT MANAGEMENT',
-      skills: ['NOTION', 'MICROSOFT OFFICE SUITE', 'ASANA'],
-    },
-    {
-      title: 'VERSION CONTROL',
-      skills: ['GITHUB'],
+      title: 'WORKFLOW &  MANAGEMENT',
+      skills: ['GITHUB', 'NOTION', 'MICROSOFT OFFICE SUITE', 'ASANA'],
     },
   ];
 
