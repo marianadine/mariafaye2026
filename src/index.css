@@ -8,7 +8,7 @@
 :root {
   --bg-color: #ffffff;
   --text-color: #121212;
-  --brand-color: #7D191B;
+  --brand-color: #db758e;
   --grey-color: #818181;
   --lightgrey-color: #A9A9A9;
   --box-bg: #FCFCFC;
@@ -19,7 +19,7 @@
 .app-container.dark {
   --bg-color: #151515;
   --text-color: #FFFFFF;
-  --brand-color: #973B3D;
+  --brand-color: #f472b6;
   --grey-color: #C8C8C8;
   --lightgrey-color: #A9A9A9;
   --box-bg: #242424;
