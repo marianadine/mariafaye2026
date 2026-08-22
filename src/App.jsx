@@ -8,6 +8,7 @@ import Exp from './pages/exp';
 import Stack from './pages/stack';
 import Shop from './pages/shop';
 import ScrollToTop from './components/scrollToTop';
+import CaseStudy from './components/CaseStudy';
 
 export default function App() {
   const [isDarkMode, setIsDarkMode] = useState(false);
@@ -25,6 +26,7 @@ export default function App() {
             <Route path="/exp" element={<Exp />} />
             <Route path="/stack" element={<Stack />} />
             <Route path="/shop" element={<Shop />} />
+            <Route path="/works/byaheko" element={<CaseStudy />} />
           </Routes>
 
           <footer className="footer-two-column">

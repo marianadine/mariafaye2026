@@ -46,10 +46,10 @@ export const featuredProjects = [
         thumbnail: byahekoThumb,
         tags: ['Transportation', 'Route Discovery', 'Local Commuting'],
         links: [
-            { label: 'Case Study ↗', url: '#' },
+            { label: 'Case Study ↗', url: '/works/byaheko' },
         ],
         badge: 'End to End Project',
-    },
+    }
 ];
 
 export const moreProjects = [

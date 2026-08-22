@@ -1,0 +1,304 @@
+/* Container Layout */
+.case-study-container {
+    width: 100%;
+    max-width: 900px;
+    margin: 75px auto 100px auto;
+    font-family: 'Geist Mono', monospace, sans-serif;
+    color: var(--text-color);
+}
+
+.back-link {
+    display: inline-block;
+    font-size: 0.85rem;
+    color: var(--brand-color);
+    text-decoration: none;
+    margin-bottom: 32px;
+    transition: opacity 0.2s ease;
+}
+
+.back-link:hover {
+    opacity: 0.75;
+}
+
+/* Header */
+.case-study-header {
+    margin-bottom: 48px;
+}
+
+.case-badge {
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    color: var(--brand-color);
+}
+
+.case-title {
+    font-family: 'Geist Sans', sans-serif;
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: var(--brand-color);
+    margin: 8px 0 12px 0;
+}
+
+.case-subtitle {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 32px;
+}
+
+/* Meta Data Grid */
+.case-meta-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    padding: 24px;
+    background-color: var(--box-bg);
+    border: 1px solid var(--box-stroke);
+    border-radius: 12px;
+}
+
+.meta-item {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.meta-label {
+    font-size: 0.7rem;
+    font-weight: 700;
+    color: var(--brand-color);
+}
+
+.meta-value {
+    font-size: 0.875rem;
+}
+
+/* Main Sections */
+.case-section {
+    margin-bottom: 48px;
+}
+
+.section-tag {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--brand-color);
+    display: block;
+    margin-bottom: 8px;
+}
+
+.section-title {
+    font-family: 'Geist Sans', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 800;
+    margin-bottom: 16px;
+    color: var(--brand-color);
+}
+
+.case-text {
+    font-size: 0.95rem;
+    line-height: 1.65;
+    margin-bottom: 16px;
+}
+
+/* Feature Cards */
+.feature-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin-top: 20px;
+}
+
+.feature-card {
+    padding: 20px;
+    background-color: var(--box-bg);
+    border: 1px solid var(--box-stroke);
+    border-radius: 12px;
+}
+
+.feature-num {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--brand-color);
+}
+
+.feature-card h4 {
+    font-family: 'Geist Sans', sans-serif;
+    font-size: 1rem;
+    margin: 8px 0;
+}
+
+.feature-card p {
+    font-size: 0.85rem;
+    line-height: 1.5;
+}
+
+/* Visual Placeholders */
+.case-media-box {
+    width: 100%;
+    height: 360px;
+    background-color: var(--box-bg);
+    border: 1px solid var(--box-stroke);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 16px;
+}
+
+.media-placeholder {
+    font-size: 0.85rem;
+    color: var(--brand-color);
+}
+
+.takeaways-list {
+    padding-left: 20px;
+    font-size: 0.95rem;
+    line-height: 1.8;
+}
+
+@media (max-width: 768px) {
+
+    .case-meta-grid,
+    .feature-list {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Layout Grids */
+.problem-grid,
+.assumptions-grid,
+.personas-grid,
+.feedback-grid,
+.metrics-grid {
+    display: grid;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.problem-grid,
+.assumptions-grid {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.personas-grid,
+.feedback-grid,
+.metrics-grid {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+/* Problem & Assumption Cards */
+.problem-card,
+.assumption-box,
+.persona-card,
+.feedback-card,
+.metric-card {
+    padding: 24px;
+    background-color: var(--box-bg);
+    border: 1px solid var(--box-stroke);
+    border-radius: 12px;
+}
+
+.bullet-list {
+    padding-left: 18px;
+    font-size: 0.875rem;
+    line-height: 1.6;
+}
+
+.bullet-list li {
+    margin-bottom: 8px;
+}
+
+/* Personas */
+.persona-header {
+    margin-bottom: 12px;
+}
+
+.persona-header h3 {
+    font-family: 'Geist Sans', sans-serif;
+    font-size: 1.25rem;
+    color: var(--brand-color);
+    margin: 0;
+}
+
+.persona-header span {
+    font-size: 0.75rem;
+    opacity: 0.8;
+}
+
+.persona-quote {
+    font-style: italic;
+    font-size: 0.85rem;
+    margin-bottom: 16px;
+    padding-left: 10px;
+    border-left: 2px solid var(--brand-color);
+}
+
+.persona-details {
+    font-size: 0.825rem;
+}
+
+.persona-details ul {
+    padding-left: 16px;
+    margin: 6px 0 12px 0;
+}
+
+/* Feedback & Iteration */
+.feedback-tag {
+    font-size: 0.65rem;
+    font-weight: 800;
+    padding: 4px 8px;
+    border-radius: 4px;
+    background-color: var(--box-stroke);
+    color: var(--brand-color);
+    display: inline-block;
+    margin-bottom: 12px;
+}
+
+.feedback-card h4 {
+    font-family: 'Geist Sans', sans-serif;
+    font-size: 1rem;
+    margin-bottom: 8px;
+}
+
+.feedback-card p {
+    font-size: 0.825rem;
+    line-height: 1.5;
+    margin-bottom: 8px;
+}
+
+/* Metrics */
+.metric-card {
+    text-align: center;
+}
+
+.metric-number {
+    font-family: 'Geist Sans', sans-serif;
+    font-size: 2.25rem;
+    font-weight: 800;
+    color: var(--brand-color);
+    display: block;
+}
+
+.metric-label {
+    font-size: 0.85rem;
+    font-weight: 700;
+    display: block;
+    margin: 6px 0;
+}
+
+.metric-card p {
+    font-size: 0.775rem;
+    opacity: 0.85;
+}
+
+/* Responsive Breakdown */
+@media (max-width: 900px) {
+
+    .problem-grid,
+    .assumptions-grid,
+    .personas-grid,
+    .feedback-grid,
+    .metrics-grid {
+        grid-template-columns: 1fr;
+    }
+}

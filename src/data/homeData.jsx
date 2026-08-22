@@ -61,9 +61,8 @@ export const projects = [
         icon: solarSphereIcon,
         tags: ['Solar Planning', 'Energy Saver', 'Cost Estimation'],
         links: [
-            { label: 'Website ↗', url: '#' },
-            { label: 'Mobile Application ↗', url: '#' },
-            { label: 'Capstone ↗', url: '#' },
+            { label: 'Website ↗', url: 'https://solarsphere-web.vercel.app/' },
+            { label: 'SITCON 2026 ↗', url: 'https://drive.google.com/file/d/1_P2t5V6EVNYI2SHpshSRr_yvn08KG0pl/view?usp=sharing' },
         ],
         badge: 'Capstone Project',
     },
@@ -74,7 +73,7 @@ export const projects = [
         icon: byahekoIcon,
         tags: ['Transportation', 'Route Discovery', 'Local Commuting'],
         links: [
-            { label: 'Case Study ↗', url: '#' },
+            { label: 'Case Study ↗', url: '/works/byaheko' },
         ],
         badge: 'End to End Project',
     },
