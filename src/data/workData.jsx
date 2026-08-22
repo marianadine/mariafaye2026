@@ -18,7 +18,7 @@ import maisonThumb from '../imgs/thumbnail/MAISON SUCRE.png';
 import madeByFeiThumb from '../imgs/thumbnail/MADEBYFEI.png';
 import clickdThumb from '../imgs/thumbnail/CLICKD.png';
 import uniqloThumb from '../imgs/thumbnail/UNIQLO.png';
-import pawsitiveThumb from '../imgs/thumbnail/PAWSITIVE care.png';
+import pawsitiveThumb from '../imgs/thumbnail/PAWSITIVE CARE.png';
 import atmThumb from '../imgs/thumbnail/ATM.png';
 import bulldogsExchangeThumb from '../imgs/thumbnail/NU MOA BE.png';
 import exploreSphereThumb from '../imgs/thumbnail/ESPHERE.png';

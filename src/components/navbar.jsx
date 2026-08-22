@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import { Sun, Moon } from 'lucide-react';
-import '../styles/Navbar.css';
+import '../styles/navbar.css';
 
 export default function Navbar({ isDarkMode, setIsDarkMode }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
