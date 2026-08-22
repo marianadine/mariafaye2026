@@ -8,6 +8,8 @@
     width: 100%;
     max-width: 1440px;
     margin: 75px auto;
+    padding: 0 24px;
+    box-sizing: border-box;
 }
 
 .certifications-section .section-name {
@@ -40,6 +42,7 @@
     background-color: var(--box-bg);
     border: 1px solid var(--box-stroke);
     border-radius: 16px;
+    box-sizing: border-box;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
@@ -54,6 +57,7 @@
     object-fit: contain;
     margin-bottom: 16px;
     border-radius: 50%;
+    flex-shrink: 0;
 }
 
 /* ==========================================================================
@@ -92,9 +96,57 @@
     padding: 6px 16px;
     text-decoration: none;
     transition: all 0.2s ease;
+    margin-top: auto;
 }
 
 .view-cert-btn:hover {
     color: var(--text-color);
     border-color: var(--text-color);
+}
+
+/* ==========================================================================
+   5. MEDIA QUERIES (RESPONSIVE BREAKPOINTS)
+   ========================================================================== */
+
+@media (max-width: 1024px) {
+    .certifications-section {
+        margin: 50px auto;
+    }
+
+    .certifications-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
+    }
+
+    .cert-card {
+        padding: 24px;
+    }
+}
+
+@media (max-width: 640px) {
+    .certifications-section {
+        margin: 40px auto;
+        padding: 0 16px;
+    }
+
+    .certifications-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+        margin: 24px auto;
+    }
+
+    .cert-icon {
+        width: 64px;
+        height: 64px;
+    }
+
+    .cert-title {
+        font-size: 1.1rem;
+    }
+
+    .cert-issuer,
+    .cert-date,
+    .view-cert-btn {
+        font-size: 0.875rem;
+    }
 }
