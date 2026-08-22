@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
+import { Sun, Moon } from 'lucide-react';
 import '../styles/Navbar.css';
 
 export default function Navbar({ isDarkMode, setIsDarkMode }) {
@@ -17,10 +18,15 @@ export default function Navbar({ isDarkMode, setIsDarkMode }) {
           </Link>
 
           <button
-            className={`toggle-switch ${isDarkMode ? 'active' : ''}`}
+            className={`theme-toggle ${isDarkMode ? 'dark' : 'light'}`}
             onClick={() => setIsDarkMode(!isDarkMode)}
-            aria-label="Toggle theme"
+            aria-label="Toggle light and dark mode"
+            title={isDarkMode ? 'Switch to Light Mode' : 'Switch to Dark Mode'}
           >
+            <span className="toggle-track">
+              <Sun className="toggle-icon sun-icon" size={14} />
+              <Moon className="toggle-icon moon-icon" size={14} />
+            </span>
             <span className="toggle-thumb" />
           </button>
         </div>

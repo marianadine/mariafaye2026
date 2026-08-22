@@ -13,6 +13,7 @@
     "@fontsource/cedarville-cursive": "^5.3.0",
     "@fontsource/geist-mono": "^5.3.0",
     "@fontsource/geist-sans": "^5.3.0",
+    "lucide-react": "^1.33.0",
     "react": "^19.2.8",
     "react-dom": "^19.2.8",
     "react-pageflip": "^2.0.3",
