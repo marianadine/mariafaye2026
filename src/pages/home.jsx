@@ -54,7 +54,7 @@ export default function Home() {
                 <div className="two-column">
                     <p>maria nadine faye rufo</p>
                     <code>
-                        an aspiring UI/UX Designer and QA Engineer with a passion for clean design and smooth user experiences.
+                        an aspiring IT professional with a passion for creating digital solutions through user-centered design, attention to detail, and high functionality.
                     </code>
                 </div>
             </section>
