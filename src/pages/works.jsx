@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { featuredProjects, moreProjects } from '../data/workData';
 
 import '../styles/commonstyles.css';
@@ -46,13 +47,13 @@ export default function Works() {
             </p>
           </div>
 
-          <a href="mailto:your.email@example.com" className="collab-btn">
+          <a href="mailto:nadinerufo7@gmail.com" className="collab-btn">
             get in touch
           </a>
         </div>
 
         <div className="collab-contacts">
-          <a href="mailto:your.email@example.com" className="collab-contact-item">
+          <a href="mailto:nadinerufo7@gmail.com" className="collab-contact-item">
             <span className="contact-label">EMAIL</span>
             <span className="contact-value">nadinerufo7@gmail.com</span>
           </a>
@@ -134,11 +135,23 @@ function ProjectCard({ project, viewMode }) {
 
       <div className="card-footer">
         <div className="footer-links">
-          {project.links.map((link, idx) => (
-            <a key={idx} href={link.url} className="project-link">
-              {link.label}
-            </a>
-          ))}
+          {project.links.map((link, idx) =>
+            link.url.startsWith('/') ? (
+              <Link key={idx} to={link.url} className="project-link">
+                {link.label}
+              </Link>
+            ) : (
+              <a
+                key={idx}
+                href={link.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="project-link"
+              >
+                {link.label}
+              </a>
+            )
+          )}
         </div>
         <span className="project-badge">{project.badge}</span>
       </div>
