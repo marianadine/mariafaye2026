@@ -429,7 +429,8 @@
 
 @media (max-width: 768px) {
     .case-study-container {
-        margin: 30px auto 60px auto;
+        margin: auto;
+        max-width: 2000px;
     }
 
     .case-meta-grid,
