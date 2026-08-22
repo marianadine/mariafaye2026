@@ -58,6 +58,26 @@
     margin: 250px auto 100px auto;
 }
 
+.see-more-btn {
+    display: block;
+    margin: 50px auto 0 auto;
+    padding: 8px 20px;
+    font-family: 'Geist Mono', monospace;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--text-color);
+    background: transparent;
+    border: 1px solid var(--text-color);
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.see-more-btn:hover {
+    color: var(--bg-color);
+    background-color: var(--text-color);
+}
+
 /* ==========================================================================
    3. BOOKS / READING SECTION
    ========================================================================== */

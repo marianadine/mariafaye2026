@@ -11,10 +11,33 @@ export default function Works() {
 
   return (
     <section className="works-container">
+      <div className="works-header">
+        <div>
+          <h3 className="section-name">projects</h3>
+          <code className="section-description">
+            products i have designed and developed — all of my ideas coming to life
+          </code>
+        </div>
 
-      {/* Wanna Collab Section */}
+        <div className="view-toggle">
+          <button
+            className={`toggle-btn ${viewMode === 'list' ? 'active' : ''}`}
+            onClick={() => setViewMode('list')}
+            aria-label="List View"
+          >
+            <span className="icon-list-view" />
+          </button>
+          <button
+            className={`toggle-btn ${viewMode === 'grid' ? 'active' : ''}`}
+            onClick={() => setViewMode('grid')}
+            aria-label="Grid View"
+          >
+            <span className="icon-grid-view" />
+          </button>
+        </div>
+      </div>
+
       <div className="collab-banner">
-        {/* Top Row: Info + Action Button */}
         <div className="collab-top-row">
           <div className="collab-content">
             <span className="collab-badge">✩ OPEN FOR COLLABS</span>
@@ -29,7 +52,6 @@ export default function Works() {
           </a>
         </div>
 
-        {/* Bottom Row: Full-width Contacts Bar */}
         <div className="collab-contacts">
           <a href="mailto:your.email@example.com" className="collab-contact-item">
             <span className="contact-label">EMAIL</span>
@@ -57,34 +79,6 @@ export default function Works() {
         </div>
       </div>
 
-      {/* Header */}
-      <div className="works-header">
-        <div>
-          <h3 className="section-name">projects</h3>
-          <code className="section-description">
-            products i have designed and developed — all of my ideas coming to life
-          </code>
-        </div>
-
-        {/* View Toggle Buttons */}
-        <div className="view-toggle">
-          <button
-            className={`toggle-btn ${viewMode === 'list' ? 'active' : ''}`}
-            onClick={() => setViewMode('list')}
-            aria-label="List View"
-          >
-            <span className="icon-list-view" />
-          </button>
-          <button
-            className={`toggle-btn ${viewMode === 'grid' ? 'active' : ''}`}
-            onClick={() => setViewMode('grid')}
-            aria-label="Grid View"
-          >
-            <span className="icon-grid-view" />
-          </button>
-        </div>
-      </div>
-
       {/* Featured Projects */}
       <span className="group-label">FEATURED</span>
       <div className="projects-grid">
@@ -109,7 +103,6 @@ function ProjectCard({ project, viewMode }) {
 
   return (
     <div className={`project-card ${viewMode}`}>
-      {/* Header Visuals */}
       {isGrid ? (
         <>
           <div className="card-media">
@@ -130,7 +123,6 @@ function ProjectCard({ project, viewMode }) {
         </div>
       )}
 
-      {/* Tags (List Mode Only) */}
       {!isGrid && (
         <div className="tag-list">
           {project.tags.map((tag, idx) => (
@@ -141,7 +133,6 @@ function ProjectCard({ project, viewMode }) {
         </div>
       )}
 
-      {/* Links & Badge */}
       <div className="card-footer">
         <div className="footer-links">
           {project.links.map((link, idx) => (
