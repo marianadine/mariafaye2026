@@ -2,116 +2,198 @@
    1. NAVBAR CONTAINER & LAYOUT
    ========================================================================== */
 .navbar {
-    width: 100%;
-    height: 100px;
-    background-color: var(--bg-color);
-    font-family: 'Geist Mono', monospace, sans-serif;
-    transition: background-color 0.25s ease;
+  width: 100%;
+  height: 100px;
+  background-color: var(--bg-color);
+  font-family: 'Geist Mono', monospace, sans-serif;
+  transition: background-color 0.25s ease;
 
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 1000;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
 }
 
 .navbar-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 40px 149px 0 149px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 40px 149px 0 149px;
+  max-width: 1400px;
+  margin: 0 auto;
 }
 
 /* ==========================================================================
    2. BRAND & LEFT SECTION
    ========================================================================== */
 .navbar-left {
-    display: flex;
-    align-items: center;
-    gap: 12px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.brand-link {
+  text-decoration: none;
+  color: inherit;
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
+  z-index: 10;
 }
 
 .brand-name {
-    font-family: 'Geist Sans', sans-serif;
-    font-size: 1.1rem;
-    font-weight: 800;
-    color: var(--brand-color);
+  font-family: 'Geist Sans', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: var(--brand-color);
+  user-select: none;
 }
 
 /* ==========================================================================
    3. NAVIGATION LINKS & RIGHT SECTION
    ========================================================================== */
 .navbar-right {
-    display: flex;
-    align-items: center;
-    gap: 28px;
+  display: flex;
+  align-items: center;
+  gap: 28px;
 }
 
 .nav-link,
 .nav-link:visited,
 .nav-link:link {
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    font-size: 0.95rem;
-    font-weight: 400;
-    color: var(--text-color);
-    text-decoration: none;
-    transition: color 0.25s ease;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.95rem;
+  font-weight: 400;
+  color: var(--text-color);
+  text-decoration: none;
+  transition: color 0.25s ease;
 }
 
 .nav-link.active {
-    font-weight: 700;
+  font-weight: 700;
 }
 
 .star-icon {
-    font-size: 0.85rem;
-}
-
-.brand-link {
-    text-decoration: none;
-    color: inherit;
-    display: inline-flex;
-    align-items: center;
-    cursor: pointer;
-    z-index: 10;
-}
-
-.brand-name {
-    font-family: 'Geist Sans', sans-serif;
-    font-weight: 700;
-    color: var(--brand-color);
-    user-select: none;
+  font-size: 0.85rem;
 }
 
 /* ==========================================================================
    4. THEME TOGGLE SWITCH
    ========================================================================== */
 .toggle-switch {
-    display: flex;
-    align-items: center;
-    width: 42px;
-    height: 22px;
-    padding: 2px;
-    background-color: #d1d5db;
-    border: none;
-    border-radius: 9999px;
-    cursor: pointer;
-    transition: background-color 0.2s ease;
+  display: flex;
+  align-items: center;
+  width: 42px;
+  height: 22px;
+  padding: 2px;
+  background-color: #d1d5db;
+  border: none;
+  border-radius: 9999px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
 }
 
 .toggle-switch.active {
-    background-color: #4b5563;
+  background-color: #4b5563;
 }
 
 .toggle-thumb {
-    width: 18px;
-    height: 18px;
-    background-color: #ffffff;
-    border-radius: 50%;
-    transition: transform 0.2s ease;
+  width: 18px;
+  height: 18px;
+  background-color: #ffffff;
+  border-radius: 50%;
+  transition: transform 0.2s ease;
 }
 
 .toggle-switch.active .toggle-thumb {
-    transform: translateX(20px);
+  transform: translateX(20px);
+}
+
+/* ==========================================================================
+   5. HAMBURGER BUTTON (MOBILE)
+   ========================================================================== */
+.hamburger-button {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 24px;
+  height: 18px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  z-index: 1001;
+}
+
+.hamburger-bar {
+  width: 100%;
+  height: 2px;
+  background-color: var(--text-color);
+  border-radius: 2px;
+  transition: all 0.25s ease;
+}
+
+.hamburger-button.active .hamburger-bar:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+
+.hamburger-button.active .hamburger-bar:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger-button.active .hamburger-bar:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+/* ==========================================================================
+   6. RESPONSIVE MEDIA QUERIES
+   ========================================================================== */
+@media (max-width: 1024px) {
+  .navbar-container {
+    padding: 30px 40px 0 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    height: 70px;
+  }
+
+  .navbar-container {
+    padding: 20px 24px 0 24px;
+  }
+
+  .hamburger-button {
+    display: flex;
+  }
+
+  .navbar-right {
+    position: fixed;
+    top: 70px;
+    left: 0;
+    right: 0;
+    background-color: var(--bg-color);
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 24px;
+    gap: 20px;
+    border-bottom: 1px solid var(--box-stroke, #ffe4e6);
+    transform: translateY(-150%);
+    opacity: 0;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05);
+  }
+
+  .navbar-right.open {
+    transform: translateY(0);
+    opacity: 1;
+  }
+
+  .nav-link {
+    font-size: 1.05rem;
+    width: 100%;
+  }
 }
