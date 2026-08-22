@@ -26,7 +26,7 @@ export default function App() {
             <Route path="/exp" element={<Exp />} />
             <Route path="/stack" element={<Stack />} />
             <Route path="/shop" element={<Shop />} />
-            <Route path="/works/byaheko" element={<CaseStudy />} />
+            <Route path="/works/:projectId" element={<CaseStudy />} />
           </Routes>
 
           <footer className="footer-two-column">

@@ -30,9 +30,9 @@ export const featuredProjects = [
         title: 'SolarSphere',
         description: 'smart solar planning platform with solar visualization and personalized recommendations',
         icon: solarSphereIcon,
-        thumbnail: solarSphereThumb,
         tags: ['Solar Planning', 'Energy Saver', 'Cost Estimation'],
         links: [
+            // { label: 'Case Study ↗', url: '/works/solarsphere' },
             { label: 'Website ↗', url: 'https://solarsphere-web.vercel.app/' },
             { label: 'SITCON 2026 ↗', url: 'https://drive.google.com/file/d/1_P2t5V6EVNYI2SHpshSRr_yvn08KG0pl/view?usp=sharing' },
         ],
@@ -43,13 +43,12 @@ export const featuredProjects = [
         title: 'ByaheKo',
         description: 'mobile app for discovering routes and making local commuting more convenient',
         icon: byahekoIcon,
-        thumbnail: byahekoThumb,
         tags: ['Transportation', 'Route Discovery', 'Local Commuting'],
         links: [
             { label: 'Case Study ↗', url: '/works/byaheko' },
         ],
         badge: 'End to End Project',
-    }
+    },
 ];
 
 export const moreProjects = [
