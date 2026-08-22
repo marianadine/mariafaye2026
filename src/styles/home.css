@@ -99,7 +99,7 @@
     align-items: center;
     text-align: center;
     width: 100%;
-    max-width: 1200px;
+    max-width: 1350px;
     margin: 150px auto;
     padding: 0 24px;
     box-sizing: border-box;
@@ -123,7 +123,7 @@
 
 .third-section .book-card {
     width: 100%;
-    max-width: 220px;
+    max-width: 300px;
     height: auto;
     object-fit: contain;
     cursor: pointer;

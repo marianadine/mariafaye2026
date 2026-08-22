@@ -423,6 +423,15 @@
     .section-description {
         font-size: 0.8rem;
     }
+
+    .book-card {
+        pointer-events: none;
+        cursor: default;
+    }
+
+    .book-card:hover {
+        transform: none;
+    }
 }
 
 @media (max-width: 480px) {
@@ -432,5 +441,14 @@
 
     .modal-card {
         padding: 32px 20px 24px 20px;
+    }
+
+    .book-card {
+        pointer-events: none;
+        cursor: default;
+    }
+
+    .book-card:hover {
+        transform: none;
     }
 }
