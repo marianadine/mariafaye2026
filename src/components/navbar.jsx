@@ -11,7 +11,6 @@ export default function Navbar({ isDarkMode, setIsDarkMode }) {
   return (
     <nav className="navbar">
       <div className="navbar-container">
-        {/* Left Section: Brand Link + Theme Toggle */}
         <div className="navbar-left">
           <Link to="/" className="brand-link" onClick={closeMenu}>
             <span className="brand-name">maria nadine</span>
@@ -26,7 +25,6 @@ export default function Navbar({ isDarkMode, setIsDarkMode }) {
           </button>
         </div>
 
-        {/* Mobile Hamburger Toggle Button */}
         <button
           className={`hamburger-button ${isMenuOpen ? 'active' : ''}`}
           onClick={toggleMenu}
@@ -37,7 +35,6 @@ export default function Navbar({ isDarkMode, setIsDarkMode }) {
           <span className="hamburger-bar" />
         </button>
 
-        {/* Right Section: Navigation Links */}
         <div className={`navbar-right ${isMenuOpen ? 'open' : ''}`}>
           <NavLink
             to="/"
