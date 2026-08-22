@@ -28,8 +28,9 @@ export const featuredProjects = [
     {
         id: 1,
         title: 'SolarSphere',
-        description: 'smart solar planning platform with solar visualization and personalized recommendations',
+        description: 'Smart solar planning platform with heatmap visualization and personalized recommendations.',
         icon: solarSphereIcon,
+        thumbnail: solarSphereThumb,
         tags: ['Solar Planning', 'Energy Saver', 'Cost Estimation'],
         links: [
             // { label: 'Case Study ↗', url: '/works/solarsphere' },
@@ -41,8 +42,9 @@ export const featuredProjects = [
     {
         id: 2,
         title: 'ByaheKo',
-        description: 'mobile app for discovering routes and making local commuting more convenient',
+        description: 'Mobile app for discovering routes and making local commuting more convenient.',
         icon: byahekoIcon,
+        thumbnail: byahekoThumb,
         tags: ['Transportation', 'Route Discovery', 'Local Commuting'],
         links: [
             { label: 'Case Study ↗', url: '/works/byaheko' },
@@ -55,7 +57,7 @@ export const moreProjects = [
     {
         id: 3,
         title: 'Clickd',
-        description: 'Interactive photobooth application for capturing and customizing photos.',
+        description: 'Interactive photobooth application for capturing photos.',
         icon: clickdIcon,
         thumbnail: clickdThumb,
         tags: ['React', 'JavaScript', 'Photobooth', 'UI/UX'],
@@ -136,7 +138,7 @@ export const moreProjects = [
     {
         id: 11,
         title: 'MadeByFei',
-        description: 'Creative brand website showcasing handmade products and creative work.',
+        description: 'Creative brand website showcasing my projects and creative work.',
         icon: madeByFeiIcon,
         thumbnail: madeByFeiThumb,
         tags: ['Web Design', 'UI/UX', 'Branding', 'JavaScript', 'HTML', 'CSS'],

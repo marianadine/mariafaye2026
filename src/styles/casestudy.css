@@ -4,17 +4,19 @@
 .case-study-container {
     width: 100%;
     max-width: 900px;
-    margin: 75px auto 100px auto;
+    margin: 40px auto 80px auto;
+    padding: 0 20px;
     font-family: 'Geist Mono', monospace, sans-serif;
-    color: var(--text-color);
+    color: var(--text-color, #111827);
+    box-sizing: border-box;
 }
 
 .back-link {
     display: inline-block;
     font-size: 0.85rem;
-    color: var(--brand-color);
+    color: var(--brand-color, #2563eb);
     text-decoration: none;
-    margin-bottom: 32px;
+    margin-bottom: 24px;
     transition: opacity 0.2s ease;
 
     &:hover {
@@ -42,28 +44,29 @@
 }
 
 .case-study-header {
-    margin-bottom: 48px;
+    margin-bottom: 40px;
 }
 
 .case-badge {
     font-size: 0.75rem;
     font-weight: 700;
     letter-spacing: 0.05em;
-    color: var(--brand-color);
+    color: var(--brand-color, #2563eb);
 }
 
 .case-title {
     font-family: 'Geist Sans', sans-serif;
-    font-size: 2.5rem;
+    font-size: clamp(1.8rem, 4vw, 2.5rem);
     font-weight: 800;
-    color: var(--brand-color);
+    color: var(--brand-color, #2563eb);
     margin: 8px 0 12px 0;
+    line-height: 1.2;
 }
 
 .case-subtitle {
-    font-size: 1.1rem;
+    font-size: clamp(0.95rem, 2vw, 1.1rem);
     line-height: 1.6;
-    margin-bottom: 32px;
+    margin-bottom: 24px;
 }
 
 .case-meta-grid {
@@ -71,8 +74,8 @@
     grid-template-columns: repeat(2, 1fr);
     gap: 20px;
     padding: 24px;
-    background-color: var(--box-bg);
-    border: 1px solid var(--box-stroke);
+    background-color: var(--box-bg, #f9fafb);
+    border: 1px solid var(--box-stroke, #e5e7eb);
     border-radius: 12px;
 }
 
@@ -85,7 +88,8 @@
 .meta-label {
     font-size: 0.7rem;
     font-weight: 700;
-    color: var(--brand-color);
+    color: var(--brand-color, #2563eb);
+    text-transform: uppercase;
 }
 
 .meta-value {
@@ -102,17 +106,18 @@
 .section-tag {
     font-size: 0.75rem;
     font-weight: 700;
-    color: var(--brand-color);
+    color: var(--brand-color, #2563eb);
     display: block;
     margin-bottom: 8px;
+    letter-spacing: 0.05em;
 }
 
 .section-title {
     font-family: 'Geist Sans', sans-serif;
-    font-size: 1.5rem;
+    font-size: clamp(1.25rem, 3vw, 1.5rem);
     font-weight: 800;
     margin-bottom: 16px;
-    color: var(--brand-color);
+    color: var(--brand-color, #2563eb);
 }
 
 .case-text {
@@ -169,16 +174,16 @@
 .feedback-card,
 .metric-card,
 .feature-card {
-    padding: 24px;
-    background-color: var(--box-bg);
-    border: 1px solid var(--box-stroke);
+    padding: 20px;
+    background-color: var(--box-bg, #f9fafb);
+    border: 1px solid var(--box-stroke, #e5e7eb);
     border-radius: 12px;
 }
 
 .feature-num {
     font-size: 0.75rem;
     font-weight: 700;
-    color: var(--brand-color);
+    color: var(--brand-color, #2563eb);
 }
 
 .feature-card {
@@ -194,13 +199,14 @@
     }
 }
 
+/* Personas */
 .persona-header {
     margin-bottom: 12px;
 
     & h3 {
         font-family: 'Geist Sans', sans-serif;
         font-size: 1.25rem;
-        color: var(--brand-color);
+        color: var(--brand-color, #2563eb);
         margin: 0;
     }
 
@@ -215,7 +221,7 @@
     font-size: 0.85rem;
     margin-bottom: 16px;
     padding-left: 10px;
-    border-left: 2px solid var(--brand-color);
+    border-left: 2px solid var(--brand-color, #2563eb);
 }
 
 .persona-details {
@@ -227,14 +233,14 @@
     }
 }
 
-/* Feedback Specifics */
+/* Feedback */
 .feedback-tag {
     font-size: 0.65rem;
     font-weight: 800;
     padding: 4px 8px;
     border-radius: 4px;
-    background-color: var(--box-stroke);
-    color: var(--brand-color);
+    background-color: var(--box-stroke, #e5e7eb);
+    color: var(--brand-color, #2563eb);
     display: inline-block;
     margin-bottom: 12px;
 }
@@ -253,6 +259,7 @@
     }
 }
 
+/* Metrics */
 .metric-card {
     text-align: center;
 
@@ -266,7 +273,7 @@
     font-family: 'Geist Sans', sans-serif;
     font-size: 2.25rem;
     font-weight: 800;
-    color: var(--brand-color);
+    color: var(--brand-color, #2563eb);
     display: block;
 }
 
@@ -280,8 +287,8 @@
 .case-media-box {
     width: 100%;
     height: 360px;
-    background-color: var(--box-bg);
-    border: 1px solid var(--box-stroke);
+    background-color: var(--box-bg, #f9fafb);
+    border: 1px solid var(--box-stroke, #e5e7eb);
     border-radius: 12px;
     display: flex;
     align-items: center;
@@ -291,32 +298,31 @@
 
 .media-placeholder {
     font-size: 0.85rem;
-    color: var(--brand-color);
+    color: var(--brand-color, #2563eb);
 }
 
 /* ==========================================================================
    UI SCREENS - MOBILE PORTRAIT OPTIMIZATIONS
    ========================================================================== */
-
 .ui-screens-alternating {
     display: flex;
     flex-direction: column;
-    gap: 4rem;
+    gap: 3.5rem;
     margin-top: 2rem;
 }
 
 .alternating-row {
     display: grid;
-    gap: 3rem;
+    gap: 2.5rem;
     align-items: center;
 }
 
 .row-video-left {
-    grid-template-columns: 280px 1fr;
+    grid-template-columns: 260px 1fr;
 }
 
 .row-video-right {
-    grid-template-columns: 1fr 280px;
+    grid-template-columns: 1fr 260px;
 }
 
 .row-video-right .screen-info {
@@ -332,17 +338,16 @@
 .screen-video-wrapper {
     position: relative;
     width: 100%;
-    max-width: 280px;
+    max-width: 260px;
     aspect-ratio: 9 / 19.5;
     margin: 0 auto;
-    border-radius: 28px;
+    border-radius: 24px;
     overflow: hidden;
     cursor: pointer;
     transition: transform 0.25s ease, box-shadow 0.25s ease;
 
     &:hover {
         transform: translateY(-4px);
-        box-shadow: 0 16px 36px rgba(0, 0, 0, 0.22);
     }
 }
 
@@ -353,12 +358,94 @@
     display: block;
 }
 
+.screen-info {
+    display: flex;
+    flex-direction: column;
+
+    & h4 {
+        font-family: 'Geist Sans', sans-serif;
+        font-size: 1.25rem;
+        font-weight: 700;
+        margin-bottom: 0.5rem;
+        color: var(--text-color, #111827);
+    }
+
+    & p {
+        font-size: 0.92rem;
+        color: var(--text-muted, #4b5563);
+        line-height: 1.6;
+    }
+}
+
+.screen-step {
+    font-family: 'Geist Mono', monospace;
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--brand-color, #2563eb);
+    margin-bottom: 0.4rem;
+    display: inline-block;
+    letter-spacing: 0.05em;
+}
+
+.ui-screens-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.ui-screen-card {
+    background: var(--box-bg, #f9fafb);
+    border: 1px solid var(--box-stroke, #e5e7eb);
+    border-radius: 8px;
+    padding: 1.25rem;
+    display: flex;
+    flex-direction: column;
+
+    & h4 {
+        font-size: 1.05rem;
+        margin-bottom: 0.5rem;
+    }
+
+    & p {
+        font-size: 0.88rem;
+        color: var(--text-muted, #4b5563);
+        line-height: 1.5;
+    }
+}
+
+/* ==========================================================================
+   RESPONSIVE BREAKPOINTS
+   ========================================================================== */
+@media (max-width: 900px) {
+
+    .personas-grid,
+    .feedback-grid,
+    .metrics-grid,
+    .feature-list {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
 @media (max-width: 768px) {
+    .case-study-container {
+        margin: 30px auto 60px auto;
+    }
+
+    .case-meta-grid,
+    .problem-grid,
+    .assumptions-grid,
+    .personas-grid,
+    .feedback-grid,
+    .metrics-grid,
+    .feature-list {
+        grid-template-columns: 1fr;
+    }
 
     .row-video-left,
     .row-video-right {
         grid-template-columns: 1fr;
-        gap: 1.5rem;
+        gap: 1.25rem;
     }
 
     .row-video-left .screen-video-wrapper,
@@ -374,87 +461,6 @@
     }
 
     .screen-video-wrapper {
-        max-width: 240px;
-    }
-}
-
-.screen-info {
-    display: flex;
-    flex-direction: column;
-
-    & h4 {
-        font-size: 1.35rem;
-        font-weight: 600;
-        margin-bottom: 0.75rem;
-        color: var(--text-main, #111827);
-    }
-
-    & p {
-        font-size: 0.98rem;
-        color: var(--text-muted, #4b5563);
-        line-height: 1.6;
-    }
-}
-
-.screen-step {
-    font-family: 'Geist Mono', monospace;
-    font-size: 0.85rem;
-    font-weight: 700;
-    color: var(--brand-color, #2563eb);
-    margin-bottom: 0.5rem;
-    display: inline-block;
-}
-
-.ui-screens-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 1.5rem;
-    margin-top: 1.5rem;
-}
-
-.ui-screen-card {
-    background: var(--card-bg, #ffffff);
-    border: 1px solid var(--box-stroke, #e5e7eb);
-    border-radius: 8px;
-    padding: 1.5rem;
-    display: flex;
-    flex-direction: column;
-
-    & h4 {
-        font-size: 1.1rem;
-        margin-bottom: 0.5rem;
-    }
-
-    & p {
-        font-size: 0.92rem;
-        color: var(--text-muted, #4b5563);
-        line-height: 1.5;
-    }
-}
-
-/* ==========================================================================
-   RESPONSIVE BREAKPOINTS
-   ========================================================================== */
-@media (max-width: 900px) {
-
-    .problem-grid,
-    .assumptions-grid,
-    .personas-grid,
-    .feedback-grid,
-    .metrics-grid,
-    .feature-list {
-        grid-template-columns: 1fr;
-    }
-}
-
-@media (max-width: 768px) {
-    .case-meta-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .alternating-row {
-        grid-template-columns: 1fr;
-        grid-template-areas: "video" "desc" !important;
-        gap: 1.25rem;
+        max-width: 220px;
     }
 }

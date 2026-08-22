@@ -10,15 +10,14 @@ export const caseStudies = {
     banner: byahekoBanner,
     demoVideo: byahekoDemoVideo1,
     meta: {
-      badge: "MOBILE & WEB CASE STUDY",
+      badge: "MOBILE CASE STUDY",
       title: "ByaheKo",
       subtitle:
-        "Streamlining local transit and commute navigation through real-time transit updates, itinerary planning, and accessible UI patterns.",
+        "Simplifying daily commuting with transit tracking, route planning, and an accessible interface.",
       metaItems: [
-        { label: "ROLE", value: "Lead UI/UX Designer & Mobile Developer" },
-        { label: "TIMELINE", value: "Academic Project" },
-        { label: "STACK & TOOLS", value: "React Native, Figma, Maps API" },
-        { label: "PROJECT SCOPE", value: "Mobile Application & Design System" },
+        { label: "ROLE", value: "UI/UX Design" },
+        { label: "STACK & TOOLS", value: "Figma" },
+        { label: "PROJECT SCOPE", value: "Mobile Application" },
       ],
     },
     overviewText: [
