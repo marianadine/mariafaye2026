@@ -175,10 +175,6 @@ export const caseStudies = {
       {
         highlight: "Value of Estimated Schedules: ",
         text: "Even with minor real-world transit variations, giving users immediate visibility into estimated arrival times drastically reduces commute anxiety."
-      },
-      {
-        highlight: "Clarity Over Realism in UI: ",
-        text: "Abstract, high-contrast vector icons and explicit text labels outperform realistic vehicle images when users need to identify transit modes at a quick glance."
       }
     ]
   },
