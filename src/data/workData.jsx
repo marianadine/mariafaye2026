@@ -108,7 +108,7 @@ export const moreProjects = [
     {
         id: 8,
         title: 'NU MOA Bulldogs Exchange',
-        description: 'Community marketplace for buying, selling, and exchanging items among students.',
+        description: 'National University marketplace for buying and selling merchandise among students.',
         icon: bulldogsExchangeIcon,
         thumbnail: bulldogsExchangeThumb,
         tags: ['Marketplace', 'React', 'Database', 'Web App', 'UI/UX'],
@@ -118,7 +118,7 @@ export const moreProjects = [
     {
         id: 9,
         title: 'JPCS NU MOA',
-        description: 'Interactive digital platform focused on connecting users with content and services.',
+        description: 'An Interactive platform focused on connecting JPCS NU MOA Members with content.',
         icon: jpcsIcon,
         thumbnail: jpcsThumb,
         tags: ['React', 'JavaScript', 'Web App', 'UI/UX'],
