@@ -1,4 +1,5 @@
 import React, { useState, forwardRef } from 'react';
+import { useNavigate } from 'react-router-dom';
 import HTMLFlipBook from 'react-pageflip';
 
 import stripImage from '../imgs/homepageimg.png';
@@ -27,6 +28,7 @@ const Page = forwardRef((props, ref) => {
 Page.displayName = 'Page';
 
 export default function Home() {
+    const navigate = useNavigate();
     const [activeBookPages, setActiveBookPages] = useState(null);
 
     const openFlipbook = (bookKey) => {
@@ -46,24 +48,11 @@ export default function Home() {
             {/* FIRST SECTION */}
             <section className="first-section">
                 <h3 className="introText">hey, it’s nadz ☆</h3>
-
-                <div className="image-wrapper">
-                    <img src={stripImage} alt="Film strip photos of Nadz" className="film-strip" />
-                </div>
-
-                <div className="two-column">
-                    <p>maria nadine faye rufo</p>
-                    <code>
-                        an aspiring IT professional with a passion for creating digital solutions through user-centered design, attention to detail, and high functionality.
-                    </code>
-                </div>
-            </section>
-
-            {/* SECOND SECTION */}
-            <section className="second-section">
-                <h3 className="section-name">brain dump</h3>
-                <code className="section-description">
-                    products i have designed and developed — all of my ideas coming to life
+                <code
+                    className="section-description"
+                    style={{ maxWidth: '500px', margin: '0 0 2rem', textAlign: 'center' }}
+                >
+                    take a look at some products i have designed and developed — my ideas coming to life
                 </code>
 
                 <div className="projects-grid">
@@ -99,10 +88,12 @@ export default function Home() {
                     ))}
                 </div>
 
-                <button className="see-more-btn">See More</button>
+                <button className="see-more-btn" onClick={() => navigate('/works')}>
+                    See More
+                </button>
             </section>
 
-            {/* THIRD SECTION */}
+            {/* SECOND SECTION */}
             <section className="third-section">
                 <h3 className="section-name">side quests</h3>
                 <code className="section-description">
@@ -116,7 +107,6 @@ export default function Home() {
                     <img src={umak} alt="UMAK Experience" className="book-card" />
                 </div>
 
-                {/* Flipbook Modal Overlay */}
                 {activeBookPages && (
                     <div className="flipbook-overlay" onClick={closeFlipbook}>
                         <div className="flipbook-modal" onClick={(e) => e.stopPropagation()}>
@@ -154,10 +144,10 @@ export default function Home() {
                 )}
             </section>
 
-            {/* FOURTH SECTION */}
+            {/* THIRD SECTION */}
             <TechStack />
 
-            {/* FIFTH SECTION */}
+            {/* FOURTH SECTION */}
             <section className="hobbies-section">
                 <h3 className="section-name">you can catch me doing:</h3>
 
@@ -170,6 +160,44 @@ export default function Home() {
                             <code className="hobby-label">{item.label}</code>
                         </div>
                     ))}
+                </div>
+            </section>
+
+            {/* FIFTH SECTION */}
+            <section className="contact-section">
+                <h3 className="section-name">let’s connect</h3>
+                <code className="section-description">
+                    open for collaborations, full-time opportunities, or just a chat!
+                </code>
+
+                <div className="image-wrapper" >
+                    <img src={stripImage} alt="Film strip photos of Nadz" className="film-strip" />
+                </div>
+
+                <div className="collab-contacts">
+                    <a href="mailto:nadinerufo7@gmail.com" className="collab-contact-item">
+                        <span className="contact-label">EMAIL</span>
+                        <span className="contact-value">nadinerufo7@gmail.com</span>
+                    </a>
+
+                    <div className="collab-socials">
+                        <a
+                            href="https://www.facebook.com/mariaafeii"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="social-link"
+                        >
+                            Facebook ↗
+                        </a>
+                        <a
+                            href="https://www.linkedin.com/in/marianadine0912/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="social-link"
+                        >
+                            LinkedIn ↗
+                        </a>
+                    </div>
                 </div>
             </section>
         </div>
