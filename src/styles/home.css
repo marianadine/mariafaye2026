@@ -10,15 +10,79 @@
     margin: 200px auto;
     padding: 0 24px;
     box-sizing: border-box;
+    position: relative;
 }
 
 .introText {
     font-family: 'Geist Sans', sans-serif;
-    font-size: 2.2rem;
-    font-weight: 700;
-    color: var(--brand-color);
-    margin-bottom: 32px;
+    font-size: 3rem;
+    font-weight: 800;
+    color: var(--text-color);
+    margin-bottom: 24px;
     text-align: center;
+}
+
+.introText-name {
+    font-family: 'Cedarville Cursive', cursive;
+    font-weight: 800;
+    font-size: 3.7rem;
+    color: var(--brand-color);
+    margin: 0 4px;
+}
+
+.hero-badge {
+    position: absolute;
+    padding: 0.4rem 0.9rem;
+    font-family: monospace;
+    font-size: 0.85rem;
+    background: var(--box-bg);
+    backdrop-filter: blur(8px);
+    border: 1px solid var(--box-stroke);
+    border-radius: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    color: var(--lightgrey-color);
+    pointer-events: none;
+    z-index: 2;
+}
+
+.badge-left {
+    top: 10%;
+    left: 10%;
+    transform: rotate(-6deg);
+    animation: floatBadgeLeft 4s ease-in-out infinite alternate;
+}
+
+.badge-right {
+    top: 15%;
+    right: 10%;
+    transform: rotate(5deg);
+    animation: floatBadgeRight 4s ease-in-out infinite alternate;
+}
+
+@keyframes floatBadgeLeft {
+    0% {
+        transform: translateY(0) rotate(8deg);
+    }
+
+    100% {
+        transform: translateY(-15px) rotate(-6deg);
+    }
+}
+
+@keyframes floatBadgeRight {
+    0% {
+        transform: translateY(0) rotate(-7deg);
+    }
+
+    100% {
+        transform: translateY(-30px) rotate(5deg);
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-badge {
+        display: none;
+    }
 }
 
 .image-wrapper {
@@ -290,6 +354,11 @@
         margin-bottom: 24px;
     }
 
+    .introText-name {
+        font-size: 1.5rem;
+        margin-bottom: 24px;
+    }
+
     .two-column {
         flex-direction: column;
         align-items: flex-start;
@@ -321,6 +390,10 @@
 @media (max-width: 480px) {
     .introText {
         font-size: 1.5rem;
+    }
+
+    .introText-name {
+        font-size: 2rem;
     }
 
     .third-section .image-wrapper,

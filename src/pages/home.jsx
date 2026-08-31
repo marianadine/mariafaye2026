@@ -47,7 +47,14 @@ export default function Home() {
         <div>
             {/* FIRST SECTION */}
             <section className="first-section">
-                <h3 className="introText">hey, it’s nadz ☆</h3>
+                {/* Floating Badges */}
+                <div className="hero-badge badge-left">UI/UX Designer</div>
+                <div className="hero-badge badge-right">Frontend Development</div>
+
+                <h3 className="introText">
+                    hey, it’s <span className="introText-name">nadz</span> ☆
+                </h3>
+                
                 <code
                     className="section-description"
                     style={{ maxWidth: '500px', margin: '0 0 2rem', textAlign: 'center' }}
