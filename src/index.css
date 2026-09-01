@@ -18,7 +18,7 @@
 /* Dark mode */
 .app-container.dark {
   --bg-color: #151515;
-  --text-color: #FFFFFF;
+  --text-color: #ececec;
   --brand-color: #f472b6;
   --grey-color: #C8C8C8;
   --lightgrey-color: #A9A9A9;

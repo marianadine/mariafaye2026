@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
 import { AnimatePresence } from 'framer-motion';
 
@@ -10,6 +10,17 @@ import Stack from './pages/stack';
 import Shop from './pages/shop';
 import ScrollToTop from './components/scrollToTop';
 import CaseStudy from './components/CaseStudy';
+
+const getInitialDarkMode = () => {
+  if (typeof window === 'undefined') return false;
+
+  const storedTheme = localStorage.getItem('theme');
+  if (storedTheme) {
+    return storedTheme === 'dark';
+  }
+
+  return false;
+};
 
 function AnimatedRoutes() {
   const location = useLocation();
@@ -29,7 +40,11 @@ function AnimatedRoutes() {
 }
 
 export default function App() {
-  const [isDarkMode, setIsDarkMode] = useState(false);
+  const [isDarkMode, setIsDarkMode] = useState(getInitialDarkMode);
+
+  useEffect(() => {
+    localStorage.setItem('theme', isDarkMode ? 'dark' : 'light');
+  }, [isDarkMode]);
 
   return (
     <div className={`app-container ${isDarkMode ? 'dark' : ''}`}>

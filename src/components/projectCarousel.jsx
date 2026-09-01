@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import { motion } from 'framer-motion';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { projects as defaultProjects } from '../data/homeData';
 import '../styles/projectCarousel.css';
 
@@ -124,21 +124,41 @@ export default function ProjectsSection({ projects = defaultProjects }) {
 
                             <div className="carouselcard-carouselfooter">
                                 <div className="carouselfooter-links">
-                                    {carouselproject.links?.map((link, idx) => (
-                                        <a
-                                            key={idx}
-                                            href={link.url}
-                                            className="carouselproject-link"
-                                            target={link.url?.startsWith('http') ? '_blank' : '_self'}
-                                            rel="noopener noreferrer"
-                                            tabIndex={isActive ? 0 : -1}
-                                            onClick={(e) => {
-                                                e.stopPropagation();
-                                            }}
-                                        >
-                                            {link.label}
-                                        </a>
-                                    ))}
+                                    {carouselproject.links?.map((link, idx) => {
+                                        const isInternalLink = link.url?.startsWith('/');
+
+                                        if (isInternalLink) {
+                                            return (
+                                                <Link
+                                                    key={idx}
+                                                    to={link.url}
+                                                    className="carouselproject-link"
+                                                    tabIndex={isActive ? 0 : -1}
+                                                    onClick={(e) => {
+                                                        e.stopPropagation();
+                                                    }}
+                                                >
+                                                    {link.label}
+                                                </Link>
+                                            );
+                                        }
+
+                                        return (
+                                            <a
+                                                key={idx}
+                                                href={link.url}
+                                                className="carouselproject-link"
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                                tabIndex={isActive ? 0 : -1}
+                                                onClick={(e) => {
+                                                    e.stopPropagation();
+                                                }}
+                                            >
+                                                {link.label}
+                                            </a>
+                                        );
+                                    })}
                                 </div>
                                 {carouselproject.badge && (
                                     <span className="carouselproject-badge">{carouselproject.badge}</span>
