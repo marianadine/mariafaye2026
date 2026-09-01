@@ -13,6 +13,8 @@ import '@fontsource/geist-mono/400.css';
 import '@fontsource/geist-mono/500.css';
 import '@fontsource/geist-mono/600.css';
 import '@fontsource/geist-mono/700.css';
+import '@fontsource/geist-mono/800.css';
+import '@fontsource/geist-mono/900.css';
 
 import '@fontsource/cedarville-cursive';
 
