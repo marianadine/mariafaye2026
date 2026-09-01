@@ -1,15 +1,13 @@
 import solarSphereIcon from '../imgs/icons/solarspherelogo.png';
 import byahekoIcon from '../imgs/icons/byahekologo.png';
+import maisonIcon from '../imgs/icons/maisonsucrelogo.png';
+import madeByFeiIcon from '../imgs/icons/madebyfeilogo.png';
+import jpcsIcon from '../imgs/icons/jpcslogo.png';
 
 import greysImg from '../imgs/cristina.png';
 import catsImg from '../imgs/cats.png';
 import booksImg from '../imgs/books.png';
 import musicImg from '../imgs/cds.png';
-
-import page1 from '../imgs/pages/page1.png';
-import page2 from '../imgs/pages/page2.png';
-import page3 from '../imgs/pages/page3.png';
-import page4 from '../imgs/pages/page4.png';
 
 // front pages
 import kmc from '../imgs/book-kmc.png';
@@ -77,6 +75,24 @@ export const projects = [
             { label: 'Case Study ↗', url: '/works/byaheko' },
         ],
         badge: 'End to End Project',
+    },
+    {
+        id: 3,
+        title: 'JPCS NU MOA',
+        description: 'An Interactive platform focused on connecting JPCS NU MOA Members with content.',
+        icon: jpcsIcon,
+        tags: ['React', 'JavaScript', 'Web App', 'UI/UX'],
+        links: [{ label: 'Website ↗', url: 'https://jpcsnumoa.github.io/community/' }],
+        badge: 'Web Application',
+    },
+    {
+        id: 4,
+        title: 'Maison Sucre',
+        description: 'Elegant bakery website showcasing products and brand identity.',
+        icon: maisonIcon,
+        tags: ['Web Design', 'UI/UX', 'HTML', 'CSS', 'JavaScript', 'Branding'],
+        links: [{ label: 'Website ↗', url: 'https://maisonsucre.vercel.app/' }],
+        badge: 'Web Application',
     },
 ];
 

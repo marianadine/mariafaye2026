@@ -17,12 +17,13 @@ import '../styles/commonstyles.css';
 import '../styles/home.css';
 
 import PageWrapper from '../components/pageWrapper';
+import ProjectCarousel from '../components/projectCarousel';
 
 const Page = forwardRef((props, ref) => {
     const isEven = props.number % 2 === 0;
     return (
         <div className={`page ${isEven ? 'page-even' : 'page-odd'}`} ref={ref}>
-            <img src={props.src} alt="Page content" className="page-image" />
+            <img src={props.src} alt={`Page ${props.number}`} className="page-image" />
         </div>
     );
 });
@@ -47,170 +48,141 @@ export default function Home() {
 
     return (
         <PageWrapper>
-        <div>
-            {/* FIRST SECTION */}
-            <section className="first-section">
-                {/* Floating Badges */}
-                <div className="hero-badge badge-left">UI/UX Designer</div>
-                <div className="hero-badge badge-right">Frontend Development</div>
+            <div>
+                {/* FIRST SECTION */}
+                <section className="first-section">
+                    <div className="hero-badge badge-left">UI/UX Designer</div>
+                    <div className="hero-badge badge-right">Frontend Development</div>
 
-                <h3 className="introText">
-                    hey, it’s <span className="introText-name">nadz</span> ☆
-                </h3>
-                
-                <code
-                    className="section-description"
-                    style={{ maxWidth: '500px', margin: '0 0 2rem', textAlign: 'center' }}
-                >
-                    take a look at some products i have designed and developed — my ideas coming to life
-                </code>
+                    <h3 className="introText">
+                        hey, it’s <span className="introText-name">nadz</span> ☆
+                    </h3>
 
-                <div className="projects-grid">
-                    {projects.map((project) => (
-                        <div key={project.id} className="project-card">
-                            <div className="card-header">
-                                <img src={project.icon} alt={project.title} className="project-icon" />
-                                <div className="project-meta">
-                                    <h4 className="project-title">{project.title}</h4>
-                                    <p className="project-desc">{project.description}</p>
-                                </div>
-                            </div>
+                    <code
+                        className="section-description"
+                        style={{ maxWidth: '500px', margin: '0 0 2rem', textAlign: 'center' }}
+                    >
+                        take a look at some products i have designed and developed — my ideas coming to life
+                    </code>
 
-                            <div className="tag-list">
-                                {project.tags.map((tag, idx) => (
-                                    <span key={idx} className="project-tag">
-                                        {tag}
-                                    </span>
-                                ))}
-                            </div>
+                    <button
+                        className="see-more-btn"
+                        onClick={() => navigate('/works')}
+                    >
+                        See More Works
+                    </button>
 
-                            <div className="card-footer">
-                                <div className="footer-links">
-                                    {project.links.map((link, idx) => (
-                                        <a key={idx} href={link.url} className="project-link">
-                                            {link.label}
-                                        </a>
+                    <ProjectCarousel />
+                </section>
+
+                {/* SECOND SECTION */}
+                <section className="third-section">
+                    <h3 className="section-name">side quests</h3>
+                    <code className="section-description">
+                        not just work, but wins — the timeline of companies i have worked with, organizations, and competitions
+                    </code>
+
+                    <div className="image-wrapper">
+                        <img src={sm} alt="SM Experience" className="book-card" onClick={() => openFlipbook('sm')} />
+                        <img src={kmc} alt="KMC Experience" className="book-card" onClick={() => openFlipbook('kmc')} />
+                        <img src={jpcs} alt="JPCS Experience" className="book-card" onClick={() => openFlipbook('jpcs')} />
+                        <img src={umak} alt="UMAK Experience" className="book-card" />
+                    </div>
+
+                    {activeBookPages && (
+                        <div className="flipbook-overlay" onClick={closeFlipbook}>
+                            <div className="flipbook-modal" onClick={(e) => e.stopPropagation()}>
+                                <button
+                                    className="close-btn"
+                                    onClick={closeFlipbook}
+                                    aria-label="Close"
+                                >
+                                    ✕
+                                </button>
+                                <HTMLFlipBook
+                                    width={550}
+                                    height={750}
+                                    size="fixed"
+                                    minWidth={300}
+                                    maxWidth={500}
+                                    minHeight={400}
+                                    maxHeight={700}
+                                    flippingTime={800}
+                                    showCover={true}
+                                    usePortrait={false}
+                                    startPage={0}
+                                    drawShadow={true}
+                                    maxShadowOpacity={0.8}
+                                    showPageCorners={true}
+                                    mobileScrollSupport={true}
+                                    className="flipbook-instance"
+                                >
+                                    {activeBookPages.map((pageSrc, index) => (
+                                        <Page key={index} number={index + 1} src={pageSrc} />
                                     ))}
+                                </HTMLFlipBook>
+                            </div>
+                        </div>
+                    )}
+                </section>
+
+                {/* THIRD SECTION */}
+                <TechStack />
+
+                {/* FOURTH SECTION */}
+                <section className="hobbies-section">
+                    <h3 className="section-name">you can catch me doing:</h3>
+
+                    <div className="hobbies-grid">
+                        {hobbiesList.map((item) => (
+                            <div key={item.id} className="hobby-card">
+                                <div className="hobby-image-wrapper">
+                                    <img src={item.image} alt={item.alt} className="hobby-image" />
                                 </div>
-                                <span className="project-badge">{project.badge}</span>
+                                <code className="hobby-label">{item.label}</code>
                             </div>
-                        </div>
-                    ))}
-                </div>
+                        ))}
+                    </div>
+                </section>
 
-                <button className="see-more-btn" onClick={() => navigate('/works')}>
-                    See More
-                </button>
-            </section>
+                {/* FIFTH SECTION */}
+                <section className="contact-section">
+                    <h3 className="section-name">let’s connect</h3>
+                    <code className="section-description">
+                        open for collaborations, full-time opportunities, or just a chat!
+                    </code>
 
-            {/* SECOND SECTION */}
-            <section className="third-section">
-                <h3 className="section-name">side quests</h3>
-                <code className="section-description">
-                    not just work, but wins — the timeline of companies i have worked with, organizations, and competitions
-                </code>
+                    <div className="image-wrapper" >
+                        <img src={stripImage} alt="Film strip photos of Nadz" className="film-strip" />
+                    </div>
 
-                <div className="image-wrapper">
-                    <img src={sm} alt="SM Experience" className="book-card" onClick={() => openFlipbook('sm')} />
-                    <img src={kmc} alt="KMC Experience" className="book-card" onClick={() => openFlipbook('kmc')} />
-                    <img src={jpcs} alt="JPCS Experience" className="book-card" onClick={() => openFlipbook('jpcs')} />
-                    <img src={umak} alt="UMAK Experience" className="book-card" />
-                </div>
+                    <div className="collab-contacts">
+                        <a href="mailto:nadinerufo7@gmail.com" className="collab-contact-item">
+                            <span className="contact-label">EMAIL</span>
+                            <span className="contact-value">nadinerufo7@gmail.com</span>
+                        </a>
 
-                {activeBookPages && (
-                    <div className="flipbook-overlay" onClick={closeFlipbook}>
-                        <div className="flipbook-modal" onClick={(e) => e.stopPropagation()}>
-                            <button
-                                className="close-btn"
-                                onClick={closeFlipbook}
-                                aria-label="Close"
+                        <div className="collab-socials">
+                            <a
+                                href="https://www.facebook.com/mariaafeii"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="social-link"
                             >
-                                ✕
-                            </button>
-                            <HTMLFlipBook
-                                width={550}
-                                height={750}
-                                size="fixed"
-                                minWidth={300}
-                                maxWidth={500}
-                                minHeight={400}
-                                maxHeight={700}
-                                flippingTime={800}
-                                showCover={true}
-                                usePortrait={false}
-                                startPage={0}
-                                drawShadow={true}
-                                maxShadowOpacity={0.8}
-                                showPageCorners={true}
-                                mobileScrollSupport={true}
-                                className="flipbook-instance"
+                                Facebook ↗
+                            </a>
+                            <a
+                                href="https://www.linkedin.com/in/marianadine0912/"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="social-link"
                             >
-                                {activeBookPages.map((pageSrc, index) => (
-                                    <Page key={index} number={index + 1} src={pageSrc} />
-                                ))}
-                            </HTMLFlipBook>
+                                LinkedIn ↗
+                            </a>
                         </div>
                     </div>
-                )}
-            </section>
-
-            {/* THIRD SECTION */}
-            <TechStack />
-
-            {/* FOURTH SECTION */}
-            <section className="hobbies-section">
-                <h3 className="section-name">you can catch me doing:</h3>
-
-                <div className="hobbies-grid">
-                    {hobbiesList.map((item) => (
-                        <div key={item.id} className="hobby-card">
-                            <div className="hobby-image-wrapper">
-                                <img src={item.image} alt={item.alt} className="hobby-image" />
-                            </div>
-                            <code className="hobby-label">{item.label}</code>
-                        </div>
-                    ))}
-                </div>
-            </section>
-
-            {/* FIFTH SECTION */}
-            <section className="contact-section">
-                <h3 className="section-name">let’s connect</h3>
-                <code className="section-description">
-                    open for collaborations, full-time opportunities, or just a chat!
-                </code>
-
-                <div className="image-wrapper" >
-                    <img src={stripImage} alt="Film strip photos of Nadz" className="film-strip" />
-                </div>
-
-                <div className="collab-contacts">
-                    <a href="mailto:nadinerufo7@gmail.com" className="collab-contact-item">
-                        <span className="contact-label">EMAIL</span>
-                        <span className="contact-value">nadinerufo7@gmail.com</span>
-                    </a>
-
-                    <div className="collab-socials">
-                        <a
-                            href="https://www.facebook.com/mariaafeii"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="social-link"
-                        >
-                            Facebook ↗
-                        </a>
-                        <a
-                            href="https://www.linkedin.com/in/marianadine0912/"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="social-link"
-                        >
-                            LinkedIn ↗
-                        </a>
-                    </div>
-                </div>
-            </section>
-        </div>
+                </section>
+            </div>
         </PageWrapper>
     );
 }
