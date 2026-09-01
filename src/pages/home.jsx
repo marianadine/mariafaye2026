@@ -16,6 +16,8 @@ import { projects, hobbiesList, bookPagesMap } from '../data/homeData';
 import '../styles/commonstyles.css';
 import '../styles/home.css';
 
+import PageWrapper from '../components/pageWrapper';
+
 const Page = forwardRef((props, ref) => {
     const isEven = props.number % 2 === 0;
     return (
@@ -44,6 +46,7 @@ export default function Home() {
     };
 
     return (
+        <PageWrapper>
         <div>
             {/* FIRST SECTION */}
             <section className="first-section">
@@ -208,5 +211,6 @@ export default function Home() {
                 </div>
             </section>
         </div>
+        </PageWrapper>
     );
 }

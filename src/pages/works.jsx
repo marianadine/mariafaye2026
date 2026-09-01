@@ -6,6 +6,8 @@ import '../styles/commonstyles.css';
 import '../styles/home.css';
 import '../styles/works.css';
 
+import PageWrapper from '../components/pageWrapper';
+
 export default function Works() {
   const [viewMode, setViewMode] = useState('grid');
   const [filter, setFilter] = useState('dev');
@@ -21,123 +23,125 @@ export default function Works() {
   const showDesignSection = filter === 'design';
 
   return (
-    <section className="works-container">
-      <div className="works-header">
-        <div>
-          <h3 className="section-name">projects</h3>
-          <code className="section-description">
-            products i have designed and developed — all of my ideas coming to life
-          </code>
+    <PageWrapper>
+      <section className="works-container">
+        <div className="works-header">
+          <div>
+            <h3 className="section-name">projects</h3>
+            <code className="section-description">
+              products i have designed and developed — all of my ideas coming to life
+            </code>
+          </div>
+
+          <div className="view-toggle">
+
+            <button
+              className={`toggle-btn ${viewMode === 'grid' ? 'active' : ''}`}
+              onClick={() => setViewMode('grid')}
+              aria-label="Grid View"
+            >
+              <span className="icon-grid-view" />
+            </button>
+            <button
+              className={`toggle-btn ${viewMode === 'list' ? 'active' : ''}`}
+              onClick={() => setViewMode('list')}
+              aria-label="List View"
+            >
+              <span className="icon-list-view" />
+            </button>
+          </div>
         </div>
 
-        <div className="view-toggle">
+        <div className={`collab-banner ${!isCollabExpanded ? "collapsed" : ""}`}>
+          <div className={`collab-header ${!isCollabExpanded ? "is-collapsed" : ""}`}>
+            <span className="collab-badge">✩ OPEN FOR COLLABS</span>
+            <button
+              className="collab-btn"
+              onClick={() => setIsCollabExpanded(!isCollabExpanded)}
+              aria-label={isCollabExpanded ? "Minimize banner" : "Expand banner"}
+            >
+              {isCollabExpanded ? (
+                <ChevronUp size={18} />
+              ) : (
+                <>Wanna collaborate?</>
+              )}
+            </button>
+          </div>
 
-          <button
-            className={`toggle-btn ${viewMode === 'grid' ? 'active' : ''}`}
-            onClick={() => setViewMode('grid')}
-            aria-label="Grid View"
-          >
-            <span className="icon-grid-view" />
-          </button>
-          <button
-            className={`toggle-btn ${viewMode === 'list' ? 'active' : ''}`}
-            onClick={() => setViewMode('list')}
-            aria-label="List View"
-          >
-            <span className="icon-list-view" />
-          </button>
-        </div>
-      </div>
+          {isCollabExpanded && (
+            <div className="collab-body">
+              <div className="collab-top-row">
+                <div className="collab-content">
+                  <h2 className="collab-title">wanna collaborate?</h2>
+                  <p className="collab-desc">
+                    have a project in mind, an idea to bring to life, or just want to chat about ui/ux and development? let’s create something amazing together.
+                  </p>
+                </div>
+              </div>
 
-      <div className={`collab-banner ${!isCollabExpanded ? "collapsed" : ""}`}>
-        <div className={`collab-header ${!isCollabExpanded ? "is-collapsed" : ""}`}>
-          <span className="collab-badge">✩ OPEN FOR COLLABS</span>
-          <button
-            className="collab-btn"
-            onClick={() => setIsCollabExpanded(!isCollabExpanded)}
-            aria-label={isCollabExpanded ? "Minimize banner" : "Expand banner"}
-          >
-            {isCollabExpanded ? (
-              <ChevronUp size={18} />
-            ) : (
-              <>Wanna collaborate?</>
-            )}
-          </button>
-        </div>
+              <div className="collab-contacts">
+                <a href="mailto:nadinerufo7@gmail.com" className="collab-contact-item">
+                  <span className="contact-label">EMAIL</span>
+                  <span className="contact-value">nadinerufo7@gmail.com</span>
+                </a>
 
-        {isCollabExpanded && (
-          <div className="collab-body">
-            <div className="collab-top-row">
-              <div className="collab-content">
-                <h2 className="collab-title">wanna collaborate?</h2>
-                <p className="collab-desc">
-                  have a project in mind, an idea to bring to life, or just want to chat about ui/ux and development? let’s create something amazing together.
-                </p>
+                <div className="collab-socials">
+                  <a
+                    href="https://www.facebook.com/mariaafeii"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="social-link"
+                  >
+                    Facebook ↗
+                  </a>
+                  <a
+                    href="https://www.linkedin.com/in/marianadine0912/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="social-link"
+                  >
+                    LinkedIn ↗
+                  </a>
+                </div>
               </div>
             </div>
+          )}
+        </div>
 
-            <div className="collab-contacts">
-              <a href="mailto:nadinerufo7@gmail.com" className="collab-contact-item">
-                <span className="contact-label">EMAIL</span>
-                <span className="contact-value">nadinerufo7@gmail.com</span>
-              </a>
+        <div className="category-filter">
+          <button
+            className={`filter-btn ${filter === 'dev' ? 'active' : ''}`}
+            onClick={() => setFilter('dev')}
+          >
+            UI/UX & Development
+          </button>
+          <button
+            className={`filter-btn ${filter === 'design' ? 'active' : ''}`}
+            onClick={() => setFilter('design')}
+          >
+            Graphic Design
+          </button>
+        </div>
 
-              <div className="collab-socials">
-                <a
-                  href="https://www.facebook.com/mariaafeii"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="social-link"
-                >
-                  Facebook ↗
-                </a>
-                <a
-                  href="https://www.linkedin.com/in/marianadine0912/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="social-link"
-                >
-                  LinkedIn ↗
-                </a>
-              </div>
+        {filteredDevProjects.length > 0 && (
+          <>
+            <span className="group-label">UI/UX & DEVELOPMENT</span>
+            <div className="projects-grid">
+              {filteredDevProjects.map((project) => (
+                <ProjectCard key={project.id} project={project} viewMode={viewMode} />
+              ))}
             </div>
+          </>
+        )}
+
+        {showDesignSection && (
+          <div className="design-section">
+            <span className="group-label margin-top">GRAPHIC DESIGN</span>
+            <CanvaDesignShowcase />
           </div>
         )}
-      </div>
-
-      <div className="category-filter">
-        <button
-          className={`filter-btn ${filter === 'dev' ? 'active' : ''}`}
-          onClick={() => setFilter('dev')}
-        >
-          UI/UX & Development
-        </button>
-        <button
-          className={`filter-btn ${filter === 'design' ? 'active' : ''}`}
-          onClick={() => setFilter('design')}
-        >
-          Graphic Design
-        </button>
-      </div>
-
-      {filteredDevProjects.length > 0 && (
-        <>
-          <span className="group-label">UI/UX & DEVELOPMENT</span>
-          <div className="projects-grid">
-            {filteredDevProjects.map((project) => (
-              <ProjectCard key={project.id} project={project} viewMode={viewMode} />
-            ))}
-          </div>
-        </>
-      )}
-
-      {showDesignSection && (
-        <div className="design-section">
-          <span className="group-label margin-top">GRAPHIC DESIGN</span>
-          <CanvaDesignShowcase />
-        </div>
-      )}
-    </section>
+      </section>
+    </PageWrapper>
   );
 }
 

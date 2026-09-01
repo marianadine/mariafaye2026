@@ -4,43 +4,47 @@ import { experiences, education } from '../data/expData';
 import '../styles/commonstyles.css';
 import '../styles/experience.css';
 
+import PageWrapper from '../components/pageWrapper';
+
 export default function Exp() {
   return (
-    <section className="exp-container">
-      {/* Experience Section */}
-      <div className="works-header">
-        <div>
-          <h3 className="section-name">experience</h3>
-          <code className="section-description">
-            companies that i have worked with ☆
-          </code>
+    <PageWrapper>
+      <section className="exp-container">
+        {/* Experience Section */}
+        <div className="works-header">
+          <div>
+            <h3 className="section-name">experience</h3>
+            <code className="section-description">
+              companies that i have worked with ☆
+            </code>
+          </div>
         </div>
-      </div>
 
-      <div className="experience-list">
-        {experiences.map((exp) => (
-          <ExperienceCard key={exp.id} item={exp} />
-        ))}
-      </div>
-
-      <hr className="section-divider" />
-
-      {/* Education Section */}
-      <div className="works-header">
-        <div>
-          <h3 className="section-name">education</h3>
-          <code className="section-description">
-            four years of bachelor's degree led me to experience and work with multiple organizations and companies
-          </code>
+        <div className="experience-list">
+          {experiences.map((exp) => (
+            <ExperienceCard key={exp.id} item={exp} />
+          ))}
         </div>
-      </div>
 
-      <div className="experience-list">
-        {education.map((edu) => (
-          <ExperienceCard key={edu.id} item={edu} />
-        ))}
-      </div>
-    </section>
+        <hr className="section-divider" />
+
+        {/* Education Section */}
+        <div className="works-header">
+          <div>
+            <h3 className="section-name">education</h3>
+            <code className="section-description">
+              four years of bachelor's degree led me to experience and work with multiple organizations and companies
+            </code>
+          </div>
+        </div>
+
+        <div className="experience-list">
+          {education.map((edu) => (
+            <ExperienceCard key={edu.id} item={edu} />
+          ))}
+        </div>
+      </section>
+    </PageWrapper>
   );
 }
 
