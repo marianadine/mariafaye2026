@@ -9,7 +9,7 @@ import Exp from './pages/exp';
 import Stack from './pages/stack';
 import Shop from './pages/shop';
 import ScrollToTop from './components/scrollToTop';
-import CaseStudy from './components/caseStudy';
+import CaseStudy from './components/CaseStudy';
 import SplashScreen from './components/splashScreen';
 
 const getInitialDarkMode = () => {

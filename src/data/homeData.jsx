@@ -55,7 +55,7 @@ export const projects = [
     {
         id: 1,
         title: 'SolarSphere',
-        description: 'smart solar planning platform with solar visualization and personalized recommendations',
+        description: 'Smart solar planning platform with heatmap visualization.',
         icon: solarSphereIcon,
         tags: ['Solar Planning', 'Energy Saver', 'Cost Estimation'],
         links: [
@@ -68,7 +68,7 @@ export const projects = [
     {
         id: 2,
         title: 'ByaheKo',
-        description: 'mobile app for discovering routes and making local commuting more convenient',
+        description: 'Mobile app for discovering routes and making local commuting more convenient.',
         icon: byahekoIcon,
         tags: ['Transportation', 'Route Discovery', 'Local Commuting'],
         links: [
