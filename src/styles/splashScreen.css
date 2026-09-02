@@ -1,0 +1,35 @@
+.splash-container {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--bg-color, #ffffff);
+  overflow: hidden;
+}
+
+.splash-star-bg {
+  position: absolute;
+  font-size: 8rem;
+  color: #df8098;
+  line-height: 1;
+  user-select: none;
+  transform-origin: center center;
+}
+
+.splash-brand-text {
+  position: relative;
+  z-index: 2;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: -0.02em;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.splash-brand-text .star-symbol {
+  font-size: 2rem;
+}

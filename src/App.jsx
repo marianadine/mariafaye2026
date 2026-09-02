@@ -9,7 +9,8 @@ import Exp from './pages/exp';
 import Stack from './pages/stack';
 import Shop from './pages/shop';
 import ScrollToTop from './components/scrollToTop';
-import CaseStudy from './components/CaseStudy';
+import CaseStudy from './components/caseStudy';
+import SplashScreen from './components/splashScreen';
 
 const getInitialDarkMode = () => {
   if (typeof window === 'undefined') return false;
@@ -41,13 +42,27 @@ function AnimatedRoutes() {
 
 export default function App() {
   const [isDarkMode, setIsDarkMode] = useState(getInitialDarkMode);
+  const [showSplash, setShowSplash] = useState(true);
 
   useEffect(() => {
     localStorage.setItem('theme', isDarkMode ? 'dark' : 'light');
+    if (isDarkMode) {
+      document.documentElement.classList.add('dark');
+      document.body.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+      document.body.classList.remove('dark');
+    }
   }, [isDarkMode]);
 
   return (
     <div className={`app-container ${isDarkMode ? 'dark' : ''}`}>
+      <AnimatePresence mode="wait">
+        {showSplash && (
+          <SplashScreen key="splash" onComplete={() => setShowSplash(false)} />
+        )}
+      </AnimatePresence>
+
       <BrowserRouter>
         <ScrollToTop />
         <Navbar isDarkMode={isDarkMode} setIsDarkMode={setIsDarkMode} />
