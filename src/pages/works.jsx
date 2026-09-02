@@ -1,12 +1,44 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { featuredProjects, moreProjects } from '../data/workData';
-import { ChevronUp } from 'lucide-react';
+import { ChevronUp, ChevronLeft, ChevronRight } from 'lucide-react';
 import '../styles/commonstyles.css';
 import '../styles/home.css';
 import '../styles/works.css';
 
 import PageWrapper from '../components/pageWrapper';
+
+const imageModules = import.meta.glob('../imgs/designs/**/*.{png,jpg,jpeg,webp}', {
+  eager: true,
+  import: 'default',
+});
+
+const designItems = Object.entries(imageModules).map(([path, imageSrc]) => {
+  const parts = path.split('/');
+  const category = parts[parts.length - 2].toLowerCase();
+  const fileName = parts[parts.length - 1];
+
+  const title = fileName
+    .replace(/\.(png|jpg|jpeg|webp)$/i, '')
+    .replace(/[-_]/g, ' ')
+    .replace(/\b\w/g, (char) => char.toUpperCase());
+
+  return {
+    id: path,
+    category,
+    src: imageSrc,
+    title,
+  };
+});
+
+const groupedDesignCategories = designItems.reduce((acc, item) => {
+  const cat = item.category;
+  if (!acc[cat]) {
+    acc[cat] = [];
+  }
+  acc[cat].push(item);
+  return acc;
+}, {});
 
 export default function Works() {
   const [viewMode, setViewMode] = useState('grid');
@@ -33,32 +65,33 @@ export default function Works() {
             </code>
           </div>
 
-          <div className="view-toggle">
-
-            <button
-              className={`toggle-btn ${viewMode === 'grid' ? 'active' : ''}`}
-              onClick={() => setViewMode('grid')}
-              aria-label="Grid View"
-            >
-              <span className="icon-grid-view" />
-            </button>
-            <button
-              className={`toggle-btn ${viewMode === 'list' ? 'active' : ''}`}
-              onClick={() => setViewMode('list')}
-              aria-label="List View"
-            >
-              <span className="icon-list-view" />
-            </button>
-          </div>
+          {!showDesignSection && (
+            <div className="view-toggle">
+              <button
+                className={`toggle-btn ${viewMode === 'grid' ? 'active' : ''}`}
+                onClick={() => setViewMode('grid')}
+                aria-label="Grid View"
+              >
+                <span className="icon-grid-view" />
+              </button>
+              <button
+                className={`toggle-btn ${viewMode === 'list' ? 'active' : ''}`}
+                onClick={() => setViewMode('list')}
+                aria-label="List View"
+              >
+                <span className="icon-list-view" />
+              </button>
+            </div>
+          )}
         </div>
 
-        <div className={`collab-banner ${!isCollabExpanded ? "collapsed" : ""}`}>
-          <div className={`collab-header ${!isCollabExpanded ? "is-collapsed" : ""}`}>
+        <div className={`collab-banner ${!isCollabExpanded ? 'collapsed' : ''}`}>
+          <div className={`collab-header ${!isCollabExpanded ? 'is-collapsed' : ''}`}>
             <span className="collab-badge">✩ OPEN FOR COLLABS</span>
             <button
               className="collab-btn"
               onClick={() => setIsCollabExpanded(!isCollabExpanded)}
-              aria-label={isCollabExpanded ? "Minimize banner" : "Expand banner"}
+              aria-label={isCollabExpanded ? 'Minimize banner' : 'Expand banner'}
             >
               {isCollabExpanded ? (
                 <ChevronUp size={18} />
@@ -119,14 +152,14 @@ export default function Works() {
             className={`filter-btn ${filter === 'design' ? 'active' : ''}`}
             onClick={() => setFilter('design')}
           >
-            Graphic Design
+            Designs
           </button>
         </div>
 
         {filteredDevProjects.length > 0 && (
           <>
             <span className="group-label">UI/UX & DEVELOPMENT</span>
-            <div className="projects-grid">
+            <div className={`projects-grid ${viewMode}`}>
               {filteredDevProjects.map((project) => (
                 <ProjectCard key={project.id} project={project} viewMode={viewMode} />
               ))}
@@ -207,13 +240,92 @@ function ProjectCard({ project, viewMode }) {
 }
 
 function CanvaDesignShowcase() {
+  const categories = Object.keys(groupedDesignCategories);
+
   return (
-    <div className="canva-carousel">
-      <div className="canva-card coming-soon-card">
-        <div className="canva-card-body">
-          <span className="coming-soon-badge">IN PROGRESS</span>
-          <h4>Designs Coming Soon</h4>
+    <div className="designs-showcase-container">
+      {categories.length > 0 ? (
+        <div className="designs-masonry-grid">
+          {categories.map((catName) => (
+            <GroupedDesignCard
+              key={catName}
+              categoryName={catName}
+              items={groupedDesignCategories[catName]}
+            />
+          ))}
         </div>
+      ) : (
+        <div className="designs-card coming-soon-card">
+          <div className="designs-card-body">
+            <span className="coming-soon-badge">IN PROGRESS</span>
+            <h4>Designs Coming Soon</h4>
+          </div>
+        </div>
+      )}
+    </div>
+  );
+}
+
+function GroupedDesignCard({ categoryName, items }) {
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [isFading, setIsFading] = useState(false);
+
+  if (!items || items.length === 0) return null;
+
+  const changeSlide = (newIndex) => {
+    setIsFading(true);
+    setTimeout(() => {
+      setCurrentIndex(newIndex);
+      setIsFading(false);
+    }, 150);
+  };
+
+  const handlePrev = (e) => {
+    e.stopPropagation();
+    const newIndex = currentIndex === 0 ? items.length - 1 : currentIndex - 1;
+    changeSlide(newIndex);
+  };
+
+  const handleNext = (e) => {
+    e.stopPropagation();
+    const newIndex = currentIndex === items.length - 1 ? 0 : currentIndex + 1;
+    changeSlide(newIndex);
+  };
+
+  const currentItem = items[currentIndex];
+
+  return (
+    <div className="designs-card grouped-card">
+      <div className="designs-card-media">
+        <img
+          src={currentItem.src}
+          alt={currentItem.title}
+          loading="lazy"
+          className={`designs-img ${isFading ? 'fade-out' : 'fade-in'}`}
+        />
+
+        {items.length > 1 && (
+          <div className="designs-nav-overlay">
+            <button
+              className="designs-arrow-btn prev"
+              onClick={handlePrev}
+              aria-label="Previous slide"
+            >
+              <ChevronLeft size={18} />
+            </button>
+            <button
+              className="designs-arrow-btn next"
+              onClick={handleNext}
+              aria-label="Next slide"
+            >
+              <ChevronRight size={18} />
+            </button>
+          </div>
+        )}
+      </div>
+
+      <div className="designs-card-body">
+        <span className="designs-category-badge">{categoryName}</span>
       </div>
     </div>
   );
