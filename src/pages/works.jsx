@@ -135,6 +135,14 @@ export default function Works() {
                   >
                     LinkedIn ↗
                   </a>
+                  <a
+                    href="https://github.com/marianadine"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="social-link"
+                  >
+                    Github ↗
+                  </a>
                 </div>
               </div>
             </div>

@@ -179,6 +179,14 @@ export default function Home() {
                             >
                                 LinkedIn ↗
                             </a>
+                            <a
+                                href="https://github.com/marianadine"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="social-link"
+                            >
+                                Github ↗
+                            </a>
                         </div>
                     </div>
                 </section>
