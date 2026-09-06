@@ -114,14 +114,13 @@
 .flipbook-overlay {
     position: fixed;
     inset: 0;
-    z-index: 1000;
+    z-index: 10000;
     display: flex;
     justify-content: center;
     align-items: center;
     background-color: rgba(0, 0, 0, 0.75);
     backdrop-filter: blur(4px);
-    padding: 1rem;
-    box-sizing: border-box;
+    padding: 0;
 }
 
 .flipbook-modal {
@@ -129,10 +128,10 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 100%;
-    max-width: 1150px;
-    padding: 2rem;
-    box-sizing: border-box;
+    width: auto;
+    max-width: none;
+    margin: 0;
+    padding: 0;
     filter: drop-shadow(0 20px 30px rgba(0, 0, 0, 0.4));
 }
 
@@ -409,10 +408,6 @@
 
     .shop-button {
         width: 100%;
-    }
-
-    .flipbook-modal {
-        padding: 1rem;
     }
 
     .section-name {

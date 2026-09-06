@@ -1,4 +1,5 @@
 import React, { useState, forwardRef } from 'react';
+import { createPortal } from 'react-dom';
 import { useNavigate } from 'react-router-dom';
 import HTMLFlipBook from 'react-pageflip';
 
@@ -88,42 +89,6 @@ export default function Home() {
                         <img src={jpcs} alt="JPCS Experience" className="book-card" onClick={() => openFlipbook('jpcs')} />
                         <img src={umak} alt="UMAK Experience" className="book-card" />
                     </div>
-
-                    {activeBookPages && (
-                        <div className="flipbook-overlay" onClick={closeFlipbook}>
-                            <div className="flipbook-modal" onClick={(e) => e.stopPropagation()}>
-                                <button
-                                    className="close-btn"
-                                    onClick={closeFlipbook}
-                                    aria-label="Close"
-                                >
-                                    ✕
-                                </button>
-                                <HTMLFlipBook
-                                    width={550}
-                                    height={750}
-                                    size="fixed"
-                                    minWidth={300}
-                                    maxWidth={500}
-                                    minHeight={400}
-                                    maxHeight={700}
-                                    flippingTime={800}
-                                    showCover={true}
-                                    usePortrait={false}
-                                    startPage={0}
-                                    drawShadow={true}
-                                    maxShadowOpacity={0.8}
-                                    showPageCorners={true}
-                                    mobileScrollSupport={true}
-                                    className="flipbook-instance"
-                                >
-                                    {activeBookPages.map((pageSrc, index) => (
-                                        <Page key={index} number={index + 1} src={pageSrc} />
-                                    ))}
-                                </HTMLFlipBook>
-                            </div>
-                        </div>
-                    )}
                 </section>
 
                 {/* THIRD SECTION */}
@@ -190,7 +155,50 @@ export default function Home() {
                         </div>
                     </div>
                 </section>
+
+                
             </div>
+
+
+            {activeBookPages && createPortal(
+                (
+                        <div className="flipbook-overlay" onClick={closeFlipbook}>
+                            <div className="flipbook-modal" onClick={(e) => e.stopPropagation()}>
+                                <button
+                                    className="close-btn"
+                                    onClick={closeFlipbook}
+                                    aria-label="Close"
+                                >
+                                    ✕
+                                </button>
+                                <HTMLFlipBook
+                                    width={550}
+                                    height={750}
+                                    size="fixed"
+                                    minWidth={300}
+                                    maxWidth={500}
+                                    minHeight={400}
+                                    maxHeight={700}
+                                    flippingTime={800}
+                                    showCover={true}
+                                    usePortrait={false}
+                                    startPage={0}
+                                    drawShadow={true}
+                                    maxShadowOpacity={0.8}
+                                    showPageCorners={true}
+                                    mobileScrollSupport={true}
+                                    className="flipbook-instance"
+                                >
+                                    {activeBookPages.map((pageSrc, index) => (
+                                        <Page key={index} number={index + 1} src={pageSrc} />
+                                    ))}
+                                </HTMLFlipBook>
+                            </div>
+                        </div>
+                ),
+                document.body,
+            )}
+
         </PageWrapper>
     );
 }
