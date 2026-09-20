@@ -13,9 +13,8 @@ export const experiences = [
             {
                 title: 'UI/UX Design',
                 bullets: [
-                    'Used Figma Auto Layout to design dashboards and interface components, specifically leading the design for the SMAC&SHOP Road to Prestige project and an end-to-end transportation application.',
                     'Conducted on-site field research at the Prestige Lounge to analyze day-to-day operational workflows, translating user behaviors and system blueprints into a highly optimized Management System.',
-                    'Studied established design systems through the tactical recreation of industry-standard mobile applications, deepening understanding of user navigation, structural consistency, and visual ergonomics.',
+                    'Designed dashboard interfaces for key mobile projects using Figma while maintaining and modernizing component design systems to ensure visual ergonomics and navigation consistency. ',
                 ],
             },
             {
@@ -56,7 +55,7 @@ export const education = [
                 title: 'Bachelor of Science in Information Technology with Specialization in Mobile and Web Applications',
                 bullets: [
                     'CGWA: 3.86 | Summa Cum Laude',
-                    "Achievements: First Honor Dean's Lister for 12 consecutive terms (2022 - 2026) | Best Presenter at SITCON 2026",
+                    "Achievements: First Honor Dean's Lister for 12 consecutive terms (2022 - 2026) | Best Presenter at SITCON 2026 | Best Presenter at NU MOA Research Colloquium 2026",
                     'Capstone Project: SolarSphere: A Web and Mobile Application for Smart Solar Planning with Heatmap Visualization',
                 ],
             },
