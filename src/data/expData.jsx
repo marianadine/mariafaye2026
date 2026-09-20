@@ -22,7 +22,6 @@ export const experiences = [
                 bullets: [
                     'Quality assurance testing for SMS, Viber, and Push Notifications within the SMAC&SHOP application to ensure deliverability for live broadcasts.',
                     'Managed end-to-end campaign deployments and documentation, validating technical triggers for high-volume broadcasts.',
-                    'Managed comprehensive performance reports to analyze user engagement with promotional campaigns and broadcast communications.',
                 ],
             },
         ],
