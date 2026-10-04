@@ -8,28 +8,31 @@ import '../styles/works.css';
 
 import PageWrapper from '../components/pageWrapper';
 
-const imageModules = import.meta.glob('../imgs/designs/**/*.{png,jpg,jpeg,webp}', {
+const imageModules = import.meta.glob('../imgs/designs/**/*', {
   eager: true,
   import: 'default',
 });
 
-const designItems = Object.entries(imageModules).map(([path, imageSrc]) => {
-  const parts = path.split('/');
-  const category = parts[parts.length - 2].toLowerCase();
-  const fileName = parts[parts.length - 1];
+const designItems = Object.entries(imageModules)
+  .filter(([path]) => /\.(png|jpe?g|webp)$/i.test(path))
+  .map(([path, imageSrc]) => {
+    const parts = path.split('/');
+    const category = parts[parts.length - 2].toLowerCase();
+    const fileName = parts[parts.length - 1];
 
-  const title = fileName
-    .replace(/\.(png|jpg|jpeg|webp)$/i, '')
-    .replace(/[-_]/g, ' ')
-    .replace(/\b\w/g, (char) => char.toUpperCase());
+    const title = fileName
+      .replace(/\.(png|jpg|jpeg|webp)$/i, '')
+      .replace(/[-_]/g, ' ')
+      .replace(/\b\w/g, (char) => char.toUpperCase());
 
-  return {
-    id: path,
-    category,
-    src: imageSrc,
-    title,
-  };
-});
+    return {
+      id: path,
+      category,
+      src: imageSrc,
+      title,
+    };
+  })
+  .sort((a, b) => a.category.localeCompare(b.category) || a.title.localeCompare(b.title));
 
 const groupedDesignCategories = designItems.reduce((acc, item) => {
   const cat = item.category;
