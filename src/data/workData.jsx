@@ -10,6 +10,7 @@ import bulldogsExchangeIcon from '../imgs/icons/bulldogsexchangelogodark.png';
 import clickdIcon from '../imgs/icons/clickdlogodark.png';
 import exploreSphereIcon from '../imgs/icons/espherelogo.png';
 import jpcsIcon from '../imgs/icons/jpcslogo.png';
+import katoIcon from '../imgs/icons/katologo.png';
 
 // Thumbnails
 import solarSphereThumb from '../imgs/thumbnail/SOLARSPHERE.png';
@@ -23,6 +24,7 @@ import atmThumb from '../imgs/thumbnail/ATM.png';
 import bulldogsExchangeThumb from '../imgs/thumbnail/NU MOA BE.png';
 import exploreSphereThumb from '../imgs/thumbnail/ESPHERE.png';
 import jpcsThumb from '../imgs/thumbnail/JPCS NU MOA.png';
+import katoThumb from '../imgs/thumbnail/KATO.png';
 
 export const featuredProjects = [
     {
@@ -50,6 +52,18 @@ export const featuredProjects = [
             { label: 'Case Study ↗', url: '/works/byaheko' },
         ],
         badge: 'End to End Project',
+    },
+    {
+        id: 2,
+        title: 'Kato Fertility',
+        description: 'Redesign of the Kato Fertility clinic website to improve user experience and showcase services.',
+        icon: katoIcon,
+        thumbnail: katoThumb,
+        tags: ['Fertility Clinic', 'Kato Alabang', 'IVF'],
+        links: [
+            { label: 'Prototype ↗', url: 'https://www.figma.com/proto/l28XiTTAnSIN02IFqVleeE/Kato-Facility-Website-Redesign?page-id=0%3A1&node-id=4-6&p=f&viewport=678%2C312%2C0.15&t=i3HuBC6MzWojh00D-1&scaling=scale-down&content-scaling=fixed' },
+        ],
+        badge: 'Redesign | Personal Project',
     },
 ];
 
