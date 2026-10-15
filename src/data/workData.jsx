@@ -56,12 +56,13 @@ export const featuredProjects = [
     {
         id: 2,
         title: 'Kato Fertility',
-        description: 'Redesign of the Kato Fertility clinic website to improve user experience and showcase services.',
+        description: 'Redesign of the Kato Fertility clinic website + photobooth to improve customer experience.',
         icon: katoIcon,
         thumbnail: katoThumb,
         tags: ['Fertility Clinic', 'Kato Alabang', 'IVF'],
         links: [
             { label: 'Prototype ↗', url: 'https://www.figma.com/proto/l28XiTTAnSIN02IFqVleeE/Kato-Facility-Website-Redesign?page-id=0%3A1&node-id=4-6&p=f&viewport=678%2C312%2C0.15&t=i3HuBC6MzWojh00D-1&scaling=scale-down&content-scaling=fixed' },
+            { label: 'Photobooth ↗', url: 'https://kato-photobooth.vercel.app/' },
         ],
         badge: 'Redesign | Personal Project',
     },
